@@ -17,6 +17,15 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=os.path.dirname(os.path.abspath(__file__)), **kwargs)
     
+    def do_GET(self):
+        # Redirect root to main site
+        if self.path in ('/', ''):
+            self.send_response(302)
+            self.send_header('Location', '/html/index.html')
+            self.end_headers()
+            return
+        super().do_GET()
+    
     def end_headers(self):
         # Add CORS headers for development
         self.send_header('Access-Control-Allow-Origin', '*')

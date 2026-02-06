@@ -4,116 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jason Krugman Studio</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <header class="header">
-        <div class="logo-container">
-            <img src="../images/logo/logo5.svg" alt="Jason Krugman Studio" class="logo" id="site-logo" 
-                 data-light="../images/logo/logo5.svg" 
-                 data-dark="../images/logo/logo5-black.png">
-        </div>
+        <a href="/html/index.html" class="logo-link">
+            <div class="logo-container">
+                <img src="/images/logo/logo5.svg" alt="Jason Krugman Studio" class="logo" id="site-logo" 
+                     data-light="/images/logo/logo5.svg" 
+                     data-dark="/images/logo/logo5-black.png">
+            </div>
+        </a>
         <nav class="nav">
-            <a href="index.html" class="nav-link active">Works</a>
-            <a href="about.html" class="nav-link">About</a>
+            <a href="/html/index.html" class="nav-link active">Works</a>
+            <a href="/html/about.html" class="nav-link">About</a>
         </nav>
     </header>
 
     <main class="gallery">
-        <div class="gallery-grid">
-            <!-- Row 1 -->
-            <a href="murmuration.html" class="gallery-item gallery-link">
-                <img src="../images/top/murmuration2Thumb.png" alt="Murmuration Installation" loading="lazy">
-            </a>
-            <div class="gallery-item">
-                <img src="../images/top/basketThumb1.jpg" alt="Basket Installation" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="../images/top/capHelixThumb4.png" alt="Cap Helix Installation" loading="lazy">
-            </div>
-            <!-- Row 2 -->
-            <div class="gallery-item">
-                <img src="../images/top/gyroidThumb.jpg" alt="Gyroid Installation" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="../images/top/jupiterBevThumb.jpg" alt="Jupiter Bev Installation" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="../images/top/reefThumb2.jpg" alt="Reef Installation" loading="lazy">
-            </div>
-            <!-- Row 3 -->
-            <div class="gallery-item">
-                <img src="../images/top/strawThumb.jpg" alt="Straw Installation" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="../images/top/meshThumb.jpg" alt="Mesh Installation" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="../images/top/trussThumb.jpg" alt="Truss Installation" loading="lazy">
-            </div>
-        </div>
+        <div id="general" class="gallery-grid"><!-- filled by /js/index.js from generalImages --></div>
     </main>
 
     <section class="gallery-section">
         <h2 class="section-title">Commissioned Designs</h2>
-        <div class="gallery-grid">
-            <!-- Row 1 -->
-            <div class="gallery-item">
-                <img src="../images/commision/faceThumb.png" alt="Face Installation" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="../images/commision/rhythmThumb.jpg" alt="Rhythm Installation" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="../images/commision/pumaThumb.png" alt="Puma Installation" loading="lazy">
-            </div>
-            <!-- Row 2 -->
-            <div class="gallery-item">
-                <img src="../images/commision/fieldThumb.jpg" alt="Field Installation" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="../images/commision/pingpongThumb4.jpg" alt="Ping Pong Installation" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="../images/commision/brainThumb.png" alt="Brain Installation" loading="lazy">
-            </div>
-            <!-- Row 3 -->
-            <div class="gallery-item">
-                <img src="../images/commision/helixThumb.jpg" alt="Helix Installation" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="../images/commision/botanicalThumb.png" alt="Botanical Installation" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="../images/commision/constellationThumb.png" alt="Constellation Installation" loading="lazy">
-            </div>
-        </div>
+        <div id="commissioned" class="gallery-grid"><!-- filled by /js/index.js from commissionedImages --></div>
     </section>
 
     <section class="gallery-section">
         <h2 class="section-title">Residential Special Projects</h2>
-        <div class="gallery-grid">
-            <!-- Row 1 -->
-            <div class="gallery-item">
-                <img src="../images/residential/diamondThumb.jpg" alt="Diamond Installation" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="../images/residential/fireThumb.jpg" alt="Fire Installation" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="../images/residential/hyparThumb.jpg" alt="Hypar Installation" loading="lazy">
-            </div>
-            <!-- Row 2 -->
-            <div class="gallery-item">
-                <img src="../images/residential/jupiterThumb3.jpg" alt="Jupiter Installation" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="../images/residential/moleculeThumb.jpg" alt="Molecule Installation" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="../images/residential/moonrakerThumb.jpg" alt="Moonraker Installation" loading="lazy">
-            </div>
-        </div>
+        <div id="residential" class="gallery-grid"><!-- filled by /js/index.js from residentialImages --></div>
     </section>
 
     <footer class="footer">
@@ -148,6 +67,7 @@
     <!-- Debug Toggle Button -->
     <button class="debug-toggle" id="theme-toggle">Toggle Dark Mode</button>
 
+    <script src="/js/index.js"></script>
     <script>
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
