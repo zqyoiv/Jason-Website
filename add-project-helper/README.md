@@ -1,6 +1,6 @@
 # Add Project Helper
 
-Simple web app to add a new project to `../js/project.js` via a form.
+Simple web app to add a new project to `../js/general-project-data.js` via a form.
 
 ## Setup
 
@@ -31,8 +31,8 @@ Then open **http://localhost:5000** in your browser.
    - **Two column image** – Left and right image paths and alt text.
    - **Text (col 1 + col 2)** – Column 1: one paragraph per line; start a line with `## ` for a heading. Column 2: one detail per line as `Label: Value` (e.g. `Artwork Title: My Work`).
 
-Click **Add block** for each block, then **Submit – update project.js**. The script appends the new project to `PROJECTS` in `../js/project.js`.
+Click **Add block** for each block, then **Submit – update general-project-data.js**. The script appends the new project to `PROJECTS` in `../js/general-project-data.js`.
 
 ## Note
 
-Run the server from the **add-project-helper** folder so `../js/project.js` points to the site’s `js/project.js`.
+Run the server from the **add-project-helper** folder so `../js/general-project-data.js` points to the site’s `js/general-project-data.js`.

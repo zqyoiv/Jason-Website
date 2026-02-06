@@ -13,57 +13,68 @@ const generalImages = [
   {
     src: IMG_TOP + 'jupiterBevThumb.jpg',
     alt: 'Jupiter Bev Installation',
-    link: '/html/project.html?project=jupiter-surface-beverly-hills'
+    // link: '/html/project.html?project=jupiter-surface-beverly-hills'
+    link: '/html/project/general/jupiter-surface-beverly-hills.html'
   },
   {
     src: IMG_TOP + 'murmuration2Thumb.png',
     alt: 'Murmuration Installation',
-    link: '/html/project.html?project=murmuration'
+    // link: '/html/project.html?project=murmuration'
+    link: '/html/project/general/murmuration.html'
   },
   {
     src: IMG_TOP + 'jupiterSpace2Thumb.png',
     alt: 'Jupiter Space',
-    link: '/html/project.html?project=jupiter-space'
+    // link: '/html/project.html?project=jupiter-space'
+    link: '/html/project/general/jupiter-space.html'
   },
   {
     src: IMG_TOP + 'capellaThumb3.jpg',
     alt: 'Capella',
-    link: '/html/project.html?project=capella-basket'
+    // link: '/html/project.html?project=capella-basket'
+    link: '/html/project/general/capella-basket.html'
   },
   {
     src: IMG_TOP + 'capHelixThumb4.png',
     alt: 'Cap Helix Installation',
-    link: '/html/project.html?project=capillary-helix'
+    // link: '/html/project.html?project=capillary-helix'
+    link: '/html/project/general/capillary-helix.html'
   },
   {
     src: IMG_TOP + 'meshThumb.jpg',
     alt: 'Mesh Installation',
-    link: '/html/project.html?project=meshes'
+    // link: '/html/project.html?project=meshes'
+    link: '/html/project/general/meshes.html'
   },
   {
     src: IMG_TOP + 'strawThumb.jpg',
     alt: 'Straw Installation',
-    link: '/html/project.html?project=straws-sculpture-system'
+    // link: '/html/project.html?project=straws-sculpture-system'
+    link: '/html/project/general/straws-sculpture-system.html'
   },
   {
     src: IMG_TOP + 'trelliThumb3.jpg',
     alt: 'Trelli Installation',
-    link: '/html/project.html?project=trelli-led-luminaire'
+    // link: '/html/project.html?project=trelli-led-luminaire'
+    link: '/html/project/general/trelli-led-luminaire.html'
   },
   {
     src: IMG_TOP + 'basketThumb1.jpg',
     alt: 'Basket Installation',
-    link: '/html/project.html?project=basket'
+    // link: '/html/project.html?project=basket'
+    link: '/html/project/general/basket.html'
   },
   {
     src: IMG_TOP + 'gyroidThumb.jpg',
     alt: 'Gyroid Installation',
-    link: '/html/project.html?project=gyroid'
+    // link: '/html/project.html?project=gyroid'
+    link: '/html/project/general/gyroid.html'
   },
   {
     src: IMG_TOP + 'trussThumb.jpg',
     alt: 'Truss Installation',
-    link: '/html/project.html?project=trelli-truss'
+    // link: '/html/project.html?project=trelli-truss'
+    link: '/html/project/general/trelli-truss.html'
   }
 ];
 

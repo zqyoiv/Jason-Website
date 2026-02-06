@@ -26,7 +26,7 @@
   </style>
 </head>
 <body>
-  <h1>Add project to project.js</h1>
+  <h1>Add project to general-project-data.js</h1>
 
   <form id="form">
     <label>Project ID (URL slug, e.g. my-new-project)</label>
@@ -53,7 +53,7 @@
       <button type="button" id="addBlock">Add block</button>
     </div>
 
-    <button type="submit" style="margin-top: 20px;">Submit – update project.js</button>
+    <button type="submit" style="margin-top: 20px;">Submit – update general-project-data.js</button>
   </form>
 
   <div id="message"></div>
@@ -231,7 +231,7 @@
           return r.json();
         })
         .then(function (data) {
-          messageEl.textContent = 'Project "' + projectId + '" added to project.js. ' + (data.path || '');
+          messageEl.textContent = 'Project "' + projectId + '" added to general-project-data.js. ' + (data.path || '');
           messageEl.className = 'success';
           messageEl.style.display = 'block';
         })

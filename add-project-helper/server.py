@@ -1,5 +1,5 @@
 """
-Add-Project Helper – small web app to add a new project to project.js.
+Add-Project Helper – small web app to add a new project to general-project-data.js.
 Run from the add-project-helper folder: python server.py
 Then open http://localhost:5000
 """
@@ -16,7 +16,7 @@ except ImportError:
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
-PROJECT_JS_PATH = os.path.join(PROJECT_ROOT, "js", "project.js")
+DATA_JS_PATH = os.path.join(PROJECT_ROOT, "js", "general-project-data.js")
 
 
 def js_str(s):
@@ -118,25 +118,19 @@ def project_to_js(project_id, title, blocks):
 
 
 def add_project_to_file(project_id, title, blocks):
-    """Insert new project into PROJECTS in project.js. Returns (success, message)."""
-    if not os.path.isfile(PROJECT_JS_PATH):
-        return False, "project.js not found at %s" % PROJECT_JS_PATH
+    """Insert new project into PROJECTS in general-project-data.js. Returns (success, message)."""
+    if not os.path.isfile(DATA_JS_PATH):
+        return False, "general-project-data.js not found at %s" % DATA_JS_PATH
 
-    with open(PROJECT_JS_PATH, "r", encoding="utf-8") as f:
+    with open(DATA_JS_PATH, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Find the closing "};" of the PROJECTS object (before "function getProjectId")
-    idx = content.find("function getProjectId")
-    if idx == -1:
-        return False, "Could not find 'function getProjectId' in project.js"
-
-    before = content[:idx]
-    # Last "};" before function is the end of PROJECTS
-    last_close = before.rfind("};")
+    # Find the closing "};" of the PROJECTS object (last one in file)
+    last_close = content.rfind("};")
     if last_close == -1:
         return False, "Could not find end of PROJECTS object"
 
-    head = before[:last_close].rstrip()
+    head = content[:last_close].rstrip()
     tail = content[last_close:]  # "};" + rest of file
     # Ensure previous project ends with comma
     if head.endswith("  }"):
@@ -147,9 +141,9 @@ def add_project_to_file(project_id, title, blocks):
     new_project = project_to_js(project_id, title, blocks)
     new_content = head + "\n" + new_project + "\n};" + tail[2:]
 
-    with open(PROJECT_JS_PATH, "w", encoding="utf-8") as f:
+    with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
         f.write(new_content)
-    return True, "Updated %s" % PROJECT_JS_PATH
+    return True, "Updated %s" % DATA_JS_PATH
 
 
 if HAS_FLASK:
@@ -177,14 +171,14 @@ if HAS_FLASK:
 
     def main():
         print("Add-Project Helper at http://localhost:5000")
-        print("project.js path:", PROJECT_JS_PATH)
+        print("general-project-data.js path:", DATA_JS_PATH)
         app.run(port=5000, debug=False)
 
 else:
     def main():
         print("Install Flask to enable the helper: pip install flask")
         print("Then run: python server.py")
-        print("project.js path:", PROJECT_JS_PATH)
+        print("general-project-data.js path:", DATA_JS_PATH)
 
 
 if __name__ == "__main__":
