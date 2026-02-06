@@ -82,7 +82,8 @@ const generalImages = [
 const commissionedImages = [
   {
     src: IMG_COMMISSIONED + 'faceThumb.png',
-    alt: 'Face Installation'
+    alt: 'Face Installation',
+    link: '/html/project.html?project=quantum-face'
   },
   {
     src: IMG_COMMISSIONED + 'botanicalThumb.png',

@@ -1,9 +1,36 @@
 /**
  * Project page data and renderer.
- * PROJECTS is defined in general-project-data.js (must be loaded before this file).
+ * Projects are loaded from general-project-data.js, commision-project-data.js,
+ * and residential-project-data.js (all must load before this file).
+ * Lookup by project id searches the merged set from all three.
  * Block types: full-image, full-video, two-column-image, five-column-image,
  * two-column-txt, full-text, project-content (see general-project-data.js for structure).
  */
+(function () {
+  var g = typeof window !== 'undefined' ? window : {
+  'quantum-face': {
+    title: 'QUANTUM FACE',
+    blocks: [
+      { type: 'full-image', src: '/images/page/quantum-face/qf1.png', alt: '' },
+      { type: 'project-content', description: [
+        { tag: 'p', content: 'In 2023, Krugman Studio created Quantum Face in collaboration Yevgeny Koramblyum. The artwork uses Krugman\'s Jupiter LED system to create an electrified mesh of circuit boards describing the surface of the mesh.' },
+      ], details: [
+        { label: 'Dimensions:', value: '96\'\' x 60\'\' x 26\'\' ( H x W x D)' },
+      ] },
+      { type: 'full-image', src: '/images/page/quantum-face/qf2.jpg', alt: '' },
+      { type: 'full-image', src: '/images/page/quantum-face/qf3.jpg', alt: '' },
+      { type: 'full-image', src: '/images/page/quantum-face/qf4.png', alt: '' }
+    ]
+  }
+};
+  var PROJECTS = Object.assign(
+    {},
+    g.PROJECTS || {},
+    g.COMMISION_PROJECTS || {},
+    g.RESIDENTIAL_PROJECTS || {}
+  );
+  window.PROJECTS = PROJECTS;
+})();
 var PROJECTS = typeof window !== 'undefined' ? window.PROJECTS : undefined;
 
 function getProjectId() {
