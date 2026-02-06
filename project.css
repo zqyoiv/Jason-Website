@@ -1,0 +1,220 @@
+/* Project page styles */
+
+.logo-link {
+    text-decoration: none;
+}
+
+.project-page {
+    padding: 0 20px 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-title {
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.project-image-full {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.project-image-full img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-footnote {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.project-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+}
+
+.project-description {
+    color: #000;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.project-description p {
+    margin-bottom: 30px;
+}
+
+.project-description h2 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.project-details {
+    color: #000;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.detail-item {
+    margin-bottom: 15px;
+}
+
+.detail-label {
+    display: block;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.detail-value {
+    display: block;
+    font-weight: 400;
+}
+
+/* About page */
+.about-content {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+}
+
+.about-links {
+    margin-top: 20px;
+}
+
+.about-link {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.about-link:hover {
+    opacity: 0.8;
+}
+
+.about-section {
+    margin-bottom: 48px;
+    color: #000;
+}
+
+.about-section-title {
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: underline;
+    margin-bottom: 16px;
+}
+
+.about-section p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.map-section {
+    margin-top: 48px;
+}
+
+.map-container {
+    width: 100%;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    display: block;
+}
+
+.map-caption {
+    font-size: 14px;
+}
+
+/* About page data tables – real <table> for column alignment */
+.about-table {
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #000;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.about-table td {
+    vertical-align: top;
+    text-align: left;
+    padding: 0 0 6px 0;
+    border: none;
+}
+
+/* Press: 3 columns – Date | Publication | Content */
+.about-table-press td:first-child {
+    width: 140px;
+    padding-right: 32px;
+}
+
+.about-table-press td:nth-child(2) {
+    width: 200px;
+    padding-right: 56px;
+}
+
+.about-table-press td:nth-child(3) {
+    width: auto;
+}
+
+/* Exhibitions & Commissions: 2 columns */
+.about-table-two-col td:first-child {
+    width: 320px;
+    padding-right: 56px;
+}
+
+.about-table-two-col td:nth-child(2) {
+    width: auto;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .project-page {
+        padding: 0 15px 40px 15px;
+    }
+
+    .project-title {
+        font-size: 12px;
+    }
+
+    .project-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .project-description {
+        font-size: 14px;
+    }
+
+    .project-details {
+        font-size: 13px;
+    }
+
+    .about-table td {
+        display: block;
+        width: auto;
+        padding-right: 0;
+        padding-bottom: 4px;
+    }
+
+    .about-table tr td:last-child {
+        padding-bottom: 14px;
+    }
+
+    .about-section-title {
+        font-size: 14px;
+    }
+}
