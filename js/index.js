@@ -1,53 +1,60 @@
 /**
  * Gallery image order and paths.
  * Edit these arrays to control which images appear and in what order.
+ * Change the path constants below if you move image folders.
  */
+
+const IMG_TOP = '/images/top/';
+const IMG_COMMISSIONED = '/images/commision/';
+const IMG_RESIDENTIAL = '/images/residential/';
 
 // General gallery (main works grid)
 const generalImages = [
   {
-    src: '/images/top/jupiterBevThumb.jpg',
-    alt: 'Jupiter Bev Installation'
+    src: IMG_TOP + 'jupiterBevThumb.jpg',
+    alt: 'Jupiter Bev Installation',
+    link: '/html/project.html?project=jupiter-surface-beverly-hills'
   },
   {
-    src: '/images/top/murmuration2Thumb.png',
+    src: IMG_TOP + 'murmuration2Thumb.png',
     alt: 'Murmuration Installation',
-    link: '/html/murmuration.html'
+    link: '/html/project.html?project=murmuration'
   },
   {
-    src: '/images/top/jupiterSpace2Thumb.png',
-    alt: 'Jupiter Space'
+    src: IMG_TOP + 'jupiterSpace2Thumb.png',
+    alt: 'Jupiter Space',
+    link: '/html/project.html?project=jupiter-space'
   },
   {
-    src: '/images/top/capellaThumb3.jpg',
+    src: IMG_TOP + 'capellaThumb3.jpg',
     alt: 'Capella'
   },
   {
-    src: '/images/top/capHelixThumb4.png',
+    src: IMG_TOP + 'capHelixThumb4.png',
     alt: 'Cap Helix Installation'
   },
   {
-    src: '/images/top/meshThumb.jpg',
+    src: IMG_TOP + 'meshThumb.jpg',
     alt: 'Mesh Installation'
   },
   {
-    src: '/images/top/strawThumb.jpg',
+    src: IMG_TOP + 'strawThumb.jpg',
     alt: 'Straw Installation'
   },
   {
-    src: '/images/top/trelliThumb3.jpg',
+    src: IMG_TOP + 'trelliThumb3.jpg',
     alt: 'Trelli Installation'
   },
   {
-    src: '/images/top/basketThumb1.jpg',
+    src: IMG_TOP + 'basketThumb1.jpg',
     alt: 'Basket Installation'
   },
   {
-    src: '/images/top/gyroidThumb.jpg',
+    src: IMG_TOP + 'gyroidThumb.jpg',
     alt: 'Gyroid Installation'
   },
   {
-    src: '/images/top/trussThumb.jpg',
+    src: IMG_TOP + 'trussThumb.jpg',
     alt: 'Truss Installation'
   }
 ];
@@ -55,43 +62,43 @@ const generalImages = [
 // Commissioned Designs
 const commissionedImages = [
   {
-    src: '/images/commision/faceThumb.png',
+    src: IMG_COMMISSIONED + 'faceThumb.png',
     alt: 'Face Installation'
   },
   {
-    src: '/images/commision/botanicalThumb.png',
+    src: IMG_COMMISSIONED + 'botanicalThumb.png',
     alt: 'Botanical Installation'
   },
   {
-    src: '/images/commision/pumaThumb.png',
+    src: IMG_COMMISSIONED + 'pumaThumb.png',
     alt: 'Puma Installation'
   },
   {
-    src: '/images/commision/pingpongThumb4.jpg',
+    src: IMG_COMMISSIONED + 'pingpongThumb4.jpg',
     alt: 'Ping Pong Installation'
   },
   {
-    src: '/images/commision/reefThumb2.jpg',
+    src: IMG_COMMISSIONED + 'reefThumb2.jpg',
     alt: 'Reef Installation'
   },
   {
-    src: '/images/commision/brainThumb.png',
+    src: IMG_COMMISSIONED + 'brainThumb.png',
     alt: 'Brain Installation'
   },
   {
-    src: '/images/commision/helixThumb.jpg',
+    src: IMG_COMMISSIONED + 'helixThumb.jpg',
     alt: 'Helix Installation'
   },
   {
-    src: '/images/commision/constellationThumb.png',
+    src: IMG_COMMISSIONED + 'constellationThumb.png',
     alt: 'Constellation Installation'
   },
   {
-    src: '/images/commision/rhythmThumb.jpg',
+    src: IMG_COMMISSIONED + 'rhythmThumb.jpg',
     alt: 'Rhythm Installation'
   },
   {
-    src: '/images/commision/fieldThumb.jpg',
+    src: IMG_COMMISSIONED + 'fieldThumb.jpg',
     alt: 'Field Installation'
   }
 ];
@@ -99,27 +106,27 @@ const commissionedImages = [
 // Residential Special Projects
 const residentialImages = [
   {
-    src: '/images/residential/jupiterThumb3.jpg',
+    src: IMG_RESIDENTIAL + 'jupiterThumb3.jpg',
     alt: 'Jupiter Installation'
   },
   {
-    src: '/images/residential/moleculeThumb.jpg',
+    src: IMG_RESIDENTIAL + 'moleculeThumb.jpg',
     alt: 'Molecule Installation'
   },
   {
-    src: '/images/residential/diamondThumb.jpg',
+    src: IMG_RESIDENTIAL + 'diamondThumb.jpg',
     alt: 'Diamond Installation'
   },
   {
-    src: '/images/residential/fireThumb.jpg',
+    src: IMG_RESIDENTIAL + 'fireThumb.jpg',
     alt: 'Fire Installation'
   },
   {
-    src: '/images/residential/hyparThumb.jpg',
+    src: IMG_RESIDENTIAL + 'hyparThumb.jpg',
     alt: 'Hypar Installation'
   },
   {
-    src: '/images/residential/moonrakerThumb.jpg',
+    src: IMG_RESIDENTIAL + 'moonrakerThumb.jpg',
     alt: 'Moonraker Installation'
   }
 ];

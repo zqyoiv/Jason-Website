@@ -29,6 +29,32 @@
     display: block;
 }
 
+/* Full-width video block */
+.project-video-full {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.project-video-full video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Two-column image block */
+.project-two-col-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.project-two-col-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .image-footnote {
     font-size: 13px;
     color: #666;
@@ -193,6 +219,10 @@
     .project-content {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    .project-two-col-image {
+        grid-template-columns: 1fr;
     }
 
     .project-description {
