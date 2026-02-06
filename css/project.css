@@ -55,6 +55,31 @@
     display: block;
 }
 
+/* Full-width text block (single column, full width) */
+.project-full-text {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.project-full-text .project-description {
+    max-width: 100%;
+}
+
+/* Five-column image block – same image × 5, seamless full width */
+.project-five-col-image {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.project-five-col-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .image-footnote {
     font-size: 13px;
     color: #666;
@@ -222,6 +247,10 @@
     }
 
     .project-two-col-image {
+        grid-template-columns: 1fr;
+    }
+
+    .project-five-col-image {
         grid-template-columns: 1fr;
     }
 

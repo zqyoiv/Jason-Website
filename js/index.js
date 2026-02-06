@@ -27,35 +27,43 @@ const generalImages = [
   },
   {
     src: IMG_TOP + 'capellaThumb3.jpg',
-    alt: 'Capella'
+    alt: 'Capella',
+    link: '/html/project.html?project=capella-basket'
   },
   {
     src: IMG_TOP + 'capHelixThumb4.png',
-    alt: 'Cap Helix Installation'
+    alt: 'Cap Helix Installation',
+    link: '/html/project.html?project=capillary-helix'
   },
   {
     src: IMG_TOP + 'meshThumb.jpg',
-    alt: 'Mesh Installation'
+    alt: 'Mesh Installation',
+    link: '/html/project.html?project=meshes'
   },
   {
     src: IMG_TOP + 'strawThumb.jpg',
-    alt: 'Straw Installation'
+    alt: 'Straw Installation',
+    link: '/html/project.html?project=straws-sculpture-system'
   },
   {
     src: IMG_TOP + 'trelliThumb3.jpg',
-    alt: 'Trelli Installation'
+    alt: 'Trelli Installation',
+    link: '/html/project.html?project=trelli-led-luminaire'
   },
   {
     src: IMG_TOP + 'basketThumb1.jpg',
-    alt: 'Basket Installation'
+    alt: 'Basket Installation',
+    link: '/html/project.html?project=basket'
   },
   {
     src: IMG_TOP + 'gyroidThumb.jpg',
-    alt: 'Gyroid Installation'
+    alt: 'Gyroid Installation',
+    link: '/html/project.html?project=gyroid'
   },
   {
     src: IMG_TOP + 'trussThumb.jpg',
-    alt: 'Truss Installation'
+    alt: 'Truss Installation',
+    link: '/html/project.html?project=trelli-truss'
   }
 ];
 
