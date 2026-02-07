@@ -404,5 +404,45 @@ var PROJECTS = {
       { type: 'full-image', src: '/images/project/general/trelli-truss/tt5.jpg', alt: '' }
     ]
   },
+  'moonraker-chandelier': {
+    title: 'MOONRAKER CHANDELIER',
+    blocks: [
+      { type: 'full-image', src: '/images/project/residential/moonraker-chandelier/m1.jpg', alt: 'Photo by Alan Tansey' },
+      { type: 'full-text', description: [
+        {
+          tag: 'p',
+          content: [
+            'When we were initially approached about "adding LEDs" to an existing chandelier, it was a bit unclear how interesting a piece it would be.',
+            'The client\'s beautiful space and architect\'s attention to detail were signs of a good project.',
+            'We signed on, not fully understanding how long it would take to execute our vision.',
+          ].join(' ')
+        },
+        {
+          tag: 'p',
+          content: [
+            'The wire framework of Paola Navone\'s Angelus has a gothic intricacy that presented a formidable challenge to encrust in two colors of clear-lensed diodes.',
+            'A few hundred hours later, we presented our client with a formidable centerpiece.',
+            'The crystals and candle flames glow separately from the more numerous cool white LED outlining the entire form.',
+          ].join(' ')
+        },
+        {
+          tag: 'p',
+          content: [
+            'The sculpture is dimmable via an iPad linked to a Crestron system.',
+            'Looking through the chandelier and out across the Hudson River, lit skyscrapers from Jersey City present a nice background to the minimalist decor of the apartment.',
+          ].join(' ')
+        },
+        {
+          tag: 'p',
+          content: [
+            'Thank you to MKCA for bringing us on and to Sofie Iommi for fabrication work.',
+          ].join(' ')
+        },
+      ] },
+      { type: 'full-image', src: '/images/project/residential/moonraker-chandelier/m2.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/residential/moonraker-chandelier/m3.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/residential/moonraker-chandelier/m4.jpg', alt: 'Photo by Alan Tansey' }
+    ]
+  }
 };
 if (typeof window !== 'undefined') { window.PROJECTS = PROJECTS; }

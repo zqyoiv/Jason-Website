@@ -136,27 +136,33 @@ const commissionedImages = [
 const residentialImages = [
   {
     src: IMG_RESIDENTIAL + 'jupiterThumb3.jpg',
-    alt: 'Jupiter Installation'
+    alt: 'Jupiter Installation',
+    link: '/html/project.html?project=jupiter'
   },
   {
     src: IMG_RESIDENTIAL + 'moleculeThumb.jpg',
-    alt: 'Molecule Installation'
+    alt: 'Molecule Installation',
+    link: '/html/project.html?project=corona'
   },
   {
     src: IMG_RESIDENTIAL + 'diamondThumb.jpg',
-    alt: 'Diamond Installation'
+    alt: 'Diamond Installation',
+    link: '/html/project.html?project=breathe-chandelier'
   },
   {
     src: IMG_RESIDENTIAL + 'fireThumb.jpg',
-    alt: 'Fire Installation'
+    alt: 'Fire Installation',
+    link: '/html/project.html?project=long-tube'
   },
   {
     src: IMG_RESIDENTIAL + 'hyparThumb.jpg',
-    alt: 'Hypar Installation'
+    alt: 'Hypar Installation',
+    link: '/html/project.html?project=hypar'
   },
   {
     src: IMG_RESIDENTIAL + 'moonrakerThumb.jpg',
-    alt: 'Moonraker Installation'
+    alt: 'Moonraker Installation',
+    link: '/html/project.html?project=moonraker-chandelier'
   }
 ];
 

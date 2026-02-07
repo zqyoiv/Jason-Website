@@ -125,6 +125,12 @@ iframe.vimeo-iframe {
     gap: 60px;
 }
 
+.project-two-col-txt-image-col img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .project-description {
     color: #000;
     font-size: 15px;

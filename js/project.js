@@ -4,7 +4,7 @@
  * and residential-project-data.js (all must load before this file).
  * Lookup by project id searches the merged set from all three.
  * Block types: full-image, full-video, two-column-image, five-column-image,
- * two-column-txt, full-text, project-content (see general-project-data.js for structure).
+ * two-column-txt, two-column-txt-image (left text, right image), full-text, project-content.
  */
 
 (function () {
@@ -168,6 +168,33 @@ function renderBlock(block) {
       }
       break;
     }
+
+    case 'two-column-txt-image':
+      wrap.className = 'project-content project-two-col-txt-image';
+      var textCol = document.createElement('div');
+      textCol.className = 'project-description';
+      (block.left || block.description || []).forEach(function (item) {
+        var el = document.createElement(item.tag || 'p');
+        el.textContent = Array.isArray(item.content) ? item.content.join(' ') : (item.content || '');
+        textCol.appendChild(el);
+      });
+      wrap.appendChild(textCol);
+      var imgCol = document.createElement('div');
+      imgCol.className = 'project-two-col-txt-image-col';
+      if (block.right && block.right.src) {
+        var rImg = document.createElement('img');
+        rImg.src = block.right.src;
+        rImg.alt = block.right.alt || '';
+        imgCol.appendChild(rImg);
+        if (block.right.alt) {
+          var rAltP = document.createElement('p');
+          rAltP.className = 'image-footnote';
+          rAltP.textContent = block.right.alt;
+          imgCol.appendChild(rAltP);
+        }
+      }
+      wrap.appendChild(imgCol);
+      break;
 
     case 'full-text':
       wrap.className = 'project-full-text';
