@@ -10,9 +10,7 @@
     <header class="header">
         <a href="/html/index.html" class="logo-link">
             <div class="logo-container">
-                <img src="/images/logo/logo5.svg" alt="Jason Krugman Studio" class="logo" id="site-logo" 
-                     data-light="/images/logo/logo5.svg" 
-                     data-dark="/images/logo/logo5-black.png">
+                <img src="/images/logo/logo5.svg" alt="Jason Krugman Studio" class="logo">
             </div>
         </a>
         <nav class="nav">
@@ -64,33 +62,6 @@
         </div>
     </footer>
 
-    <!-- Debug Toggle Button -->
-    <button class="debug-toggle" id="theme-toggle">Toggle Dark Mode</button>
-
     <script src="/js/index.js"></script>
-    <script>
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        const logo = document.getElementById('site-logo');
-
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            body.classList.add('dark-mode');
-            logo.src = logo.dataset.dark;
-        }
-
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            if (body.classList.contains('dark-mode')) {
-                logo.src = logo.dataset.dark;
-                localStorage.setItem('theme', 'dark');
-            } else {
-                logo.src = logo.dataset.light;
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    </script>
 </body>
 </html>
