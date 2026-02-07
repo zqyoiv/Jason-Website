@@ -4,7 +4,7 @@ var PROJECTS = {
     blocks: [
       {
         type: 'full-image',
-        src: '/images/page/murmuration/20230315_203046.jpg',
+        src: '/images/project/general/murmuration/20230315_203046.jpg',
         alt: 'Murmuration Installation'
       },
       {
@@ -46,17 +46,17 @@ var PROJECTS = {
       },
       {
         type: 'full-image',
-        src: '/images/page/murmuration/murmuration_diagram.jpg',
+        src: '/images/project/general/murmuration/murmuration_diagram.jpg',
         alt: 'Murmuration Diagram'
       },
       {
         type: 'full-image',
-        src: '/images/page/murmuration/20230315_200602.png',
+        src: '/images/project/general/murmuration/20230315_200602.png',
         alt: 'Murmuration Detail'
       },
       {
         type: 'full-image',
-        src: '/images/page/murmuration/20230315_200533.png',
+        src: '/images/project/general/murmuration/20230315_200533.png',
         alt: 'Murmuration Detail'
       }
     ]
@@ -66,7 +66,7 @@ var PROJECTS = {
     blocks: [
       {
         type: 'full-image',
-        src: '/images/page/jupiter-space/jupiterspace1.jpg',
+        src: '/images/project/general/jupiter-space/jupiterspace1.jpg',
         alt: 'Jupiter Space'
       },
       {
@@ -101,22 +101,22 @@ var PROJECTS = {
       },
       {
         type: 'full-image',
-        src: '/images/page/jupiter-space/jupiterspace2.jpg',
+        src: '/images/project/general/jupiter-space/jupiterspace2.jpg',
         alt: 'Jupiter Space'
       },
       {
         type: 'full-image',
-        src: '/images/page/jupiter-space/jupiterspace3.png',
+        src: '/images/project/general/jupiter-space/jupiterspace3.png',
         alt: 'Jupiter Space'
       },
       {
         type: 'full-image',
-        src: '/images/page/jupiter-space/jupiterspace4.png',
+        src: '/images/project/general/jupiter-space/jupiterspace4.png',
         alt: 'Jupiter Space'
       },
       {
         type: 'full-image',
-        src: '/images/page/jupiter-space/jupiterspace5.jpg',
+        src: '/images/project/general/jupiter-space/jupiterspace5.jpg',
         alt: 'Jupiter Space'
       }
     ]
@@ -126,7 +126,7 @@ var PROJECTS = {
     blocks: [
       {
         type: 'full-image',
-        src: '/images/page/jupiter-surface-beverly-hills/inside_bar2k.jpg',
+        src: '/images/project/general/jupiter-surface-beverly-hills/inside_bar2k.jpg',
         alt: "Jupiter's Surface Beverly Hills"
       },
       {
@@ -147,12 +147,12 @@ var PROJECTS = {
       },
       {
         type: 'full-image',
-        src: '/images/page/jupiter-surface-beverly-hills/inside_outside2k.jpg',
+        src: '/images/project/general/jupiter-surface-beverly-hills/inside_outside2k.jpg',
         alt: "Jupiter's Surface Beverly Hills"
       },
       {
         type: 'full-image',
-        src: '/images/page/jupiter-surface-beverly-hills/outsideCropped.jpg',
+        src: '/images/project/general/jupiter-surface-beverly-hills/outsideCropped.jpg',
         alt: "Jupiter's Surface Beverly Hills"
       }
     ]
@@ -160,7 +160,7 @@ var PROJECTS = {
   'capella-basket': {
     title: 'CAPELLA BASKET',
     blocks: [
-      { type: 'full-image', src: '/images/page/capella-basket/cb1.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/capella-basket/cb1.jpg', alt: '' },
       { type: 'project-content', description: [
         { tag: 'p', content: 'In March 2020, Jason Krugman Studio created its largest sculpture to date, a 22ft x 22ft x 16ft centerpiece for Capella Tower in Minneapolis, MN. Inspired by the "wiring" of organic creatures, Jason Krugman\'s Capella Basket sculpture uses a new electrical medium to rout energy through space. The sculpture is a centerpiece for Capella Tower, a class A office tower in downtown Minneapolis. From its hang-point 70-ft in the air, the artwork floats centrally in the large glass-walled atrium. Viewers are able to get a 270 degree view from the mezzanine and peer straight up and through from the floor below.' },
         { tag: 'p', content: 'Capella Basket is based on Krugman\'s original table-sized Basket sculpture. Its form references the toroidal shape of magnetic fields. Krugman used his patented connector system to create the sculpture with almost no wiring. Instead, over 10,000 circuit boards distribute and deliver power to 1,860 LED light sources. Blending craft with technology, Krugman works to discover new ways of arranging electricity in three dimensions.' },
@@ -172,25 +172,25 @@ var PROJECTS = {
         { label: 'Date of Completion:', value: 'March 2020' },
         { label: 'Address:', value: 'Capella Tower, 226 South 6th St, Minneapolis, MN' },
       ] },
-      { type: 'full-image', src: '/images/page/capella-basket/cb2.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/capella-basket/cb3.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/capella-basket/cb4.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/capella-basket/cb5.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/capella-basket/cb6.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/capella-basket/cb2.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/capella-basket/cb3.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/capella-basket/cb4.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/capella-basket/cb5.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/capella-basket/cb6.jpg', alt: '' },
       { type: 'project-content', description: [
         { tag: 'p', content: 'PROCESS' },
         { tag: 'p', content: 'The sculpture is made from an electrified mesh of over 10,000 circuit boards supported by an aluminum frame. During construction, the sculpture was first set up in its entirety in a Brooklyn warehouse. After 8 weeks of assembly and fabrication, it was disassembled, rolled up and driven to Minneapolis. The below timelapses highlight the process as well as the final assembly and testing on site at Capella Tower.' },
         { tag: 'p', content: 'To recreate the original artwork at a more than 10x scale, the process morphs from a physical exploration of handmade form into a digital design and fabrication exercise. The original sculpture was made with a series of systematic operations to transform a flat sheet of hand-soldered LED mesh into a 3-dimensional toroidal section. These operations are replicated digitally with key parameters of the original physical model programmed into the digital one. The initial constraints during the artwork\'s creation make it agnostic of scale or even medium.' },
       ], details: [
       ] },
-      { type: 'full-image', src: '/images/page/capella-basket/cb7.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/capella-basket/cb8.jpg', alt: '' }
+      { type: 'full-image', src: '/images/project/general/capella-basket/cb7.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/capella-basket/cb8.jpg', alt: '' }
     ]
   },
   'capillary-helix': {
     title: 'CAPILLARY HELIX',
     blocks: [
-      { type: 'full-image', src: '/images/page/capillary-helix/ch1.png', alt: '' },
+      { type: 'full-image', src: '/images/project/general/capillary-helix/ch1.png', alt: '' },
       { type: 'full-text', description: [
         { tag: 'p', content: 'In 2023, Krugman Studio created Capillary Helix for Montefiore\'s Einstein Advanced Care at Hudson Yards. The sculpture was conceived as a response to the question of how light and art can promote healing within healthcare settings.' },
         { tag: 'p', content: 'Capillary Helix was born through a series of steps, each adding an additional layer of intricacy. Similar to bone or a spiraling section of DNA, Capillary Helix is drawn taut via a multitude of lightweight internal cross braces. Lights on the opposing faces of the helices are inserted into drinking straws affixing their rolling surfaces together. The resulting trusses become rigid while the straws act as individual vessels for each light.' },
@@ -198,70 +198,70 @@ var PROJECTS = {
         { tag: 'p', content: '\'\'This sculpture is about organization and our efforts to repair and stay organized in a chaotic world. Healthcare and healing spaces are an answer to this challenge, creating a bubble of calm and organization where we can collaboratively use technology with a human touch for good. I am overjoyed to make artwork specifically for this setting and the people who will use this space.\'\'' },
       ], details: [
       ] },
-      { type: 'full-image', src: '/images/page/capillary-helix/ch2.jpg', alt: 'Photo by Scott Frances Photography' },
-      { type: 'full-image', src: '/images/page/capillary-helix/ch3.jpg', alt: 'Photo by Scott Frances Photography' },
-      { type: 'full-image', src: '/images/page/capillary-helix/ch4.jpg', alt: '' }
+      { type: 'full-image', src: '/images/project/general/capillary-helix/ch2.jpg', alt: 'Photo by Scott Frances Photography' },
+      { type: 'full-image', src: '/images/project/general/capillary-helix/ch3.jpg', alt: 'Photo by Scott Frances Photography' },
+      { type: 'full-image', src: '/images/project/general/capillary-helix/ch4.jpg', alt: '' }
     ]
   },
   'meshes': {
     title: 'MESHES',
     blocks: [
-      { type: 'full-image', src: '/images/page/meshes/mesh1.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/meshes/mesh1.jpg', alt: '' },
       { type: 'full-text', description: [
         { tag: 'p', content: 'Mesh. Hand-soldered one light at a time.' },
         { tag: 'p', content: 'After fabrication of the LED mesh, the resulting topography of lights is suspended in space from an electrified structure. The material lends itself to smooth rolling forms devoid of sharp folds or creases. Each piece is custom made and shaped.' },
         { tag: 'p', content: 'Krugman has been working with this material for over 10 years. ETL listed and dimmable.' },
       ], details: [
       ] },
-      { type: 'full-image', src: '/images/page/meshes/mesh2.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/meshes/mesh3.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/meshes/mesh4.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/meshes/mesh5.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/meshes/mesh6.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/meshes/mesh7.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/meshes/mesh8.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/meshes/mesh9.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/meshes/mesh10.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/meshes/mesh11.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/meshes/mesh12.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/meshes/mesh13.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/meshes/mesh14.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/meshes/mesh15.jpg', alt: '' }
+      { type: 'full-image', src: '/images/project/general/meshes/mesh2.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/meshes/mesh3.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/meshes/mesh4.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/meshes/mesh5.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/meshes/mesh6.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/meshes/mesh7.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/meshes/mesh8.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/meshes/mesh9.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/meshes/mesh10.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/meshes/mesh11.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/meshes/mesh12.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/meshes/mesh13.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/meshes/mesh14.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/meshes/mesh15.jpg', alt: '' }
     ]
   },
   'straws-sculpture-system': {
     title: 'STRAWS Sculpture System',
     blocks: [
-      { type: 'full-image', src: '/images/page/straws-sculpture-system/straws1.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/straws-sculpture-system/straws2.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/straws-sculpture-system/straws1.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/straws-sculpture-system/straws2.jpg', alt: '' },
       { type: 'full-text', description: [
         { tag: 'p', content: 'Overview' },
         { tag: 'p', content: 'Combining light and geometric transformations lies at the heart of our creative practice. These artworks start as square grids of lights facing one another. Drinking straws are used to attach each of the points of the two grids to one another. The resulting form is a cube with lights on two faces, joined by an array of light diffusing straws. The real magic happens when the grids are deformed. Pulling on the opposing corners of the grids causes the square-shaped polygonal mesh to become diamond-shaped. The resulting volume becomes helical and the pattern can be continued.' },
       ], details: [
       ] },
-      { type: 'full-image', src: '/images/page/straws-sculpture-system/straws3.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/straws-sculpture-system/straws3.jpg', alt: '' },
       { type: 'full-text', description: [
         { tag: 'p', content: 'HELIX' },
         { tag: 'p', content: 'This group of artworks, initially created in 2017 and elaborated in 2018 with the large-scale permanent Helix artwork for Holland America Line, is based on opposing surfaces of lights. To scale the work up while maintaining its aesthetic integrity, Krugman Studio created a design with no wiring visible and almost no visible hardware. The structure was CNC bent and thousands of small brass fittings were hand-machined and fitted. Link to Helix cruise ship project.' },
         { tag: 'p', content: 'STRAW HELIX' },
       ], details: [
       ] },
-      { type: 'full-image', src: '/images/page/straws-sculpture-system/straws4.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/straws-sculpture-system/straws4.jpg', alt: '' },
       { type: 'full-text', description: [
         { tag: 'p', content: 'In 2023, Krugman Studio created Capillary Helix for Montefiore\'s Einstein Advanced Care at Hudson Yards. The sculpture utilizing a consistent spiral shape by restricting the number of different elements used. A diagrid of LED mesh is used on either face of the mesh panels. All of the straws are the same length. As the grid distends, hyperbolic surfaces mirror one another, restricted by the grid and the single straw length. The LEDs on either side of the mesh surfaces pivot to allow the overall twist of the form.' },
       ], details: [
       ] },
-      { type: 'full-image', src: '/images/page/straws-sculpture-system/straws5.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/straws-sculpture-system/straws6.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/straws-sculpture-system/straws7.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/straws-sculpture-system/straws8.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/straws-sculpture-system/straws9.jpg', alt: '' }
+      { type: 'full-image', src: '/images/project/general/straws-sculpture-system/straws5.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/straws-sculpture-system/straws6.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/straws-sculpture-system/straws7.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/straws-sculpture-system/straws8.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/straws-sculpture-system/straws9.jpg', alt: '' }
     ]
   },
   'trelli-led-luminaire': {
     title: 'TRELLI LED LUMINAIRE',
     blocks: [
-      { type: 'full-image', src: '/images/page/trelli-led-luminaire/trelli1.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/trelli-led-luminaire/trelli1.jpg', alt: '' },
       { type: 'full-text', description: [
         { tag: 'p', content: 'Design your own pattern or follow one of our templates to create an elegant fixture or architectural lighting installation. There is no limit to scale as the system is completely modular in its design. LED struts screw together with standard hardware to form an unlimited number of patterns. Make fixtures for the wall, ceiling or even three dimensional forms (the LED struts are flexible).' },
         { tag: 'p', content: 'Download Sample Cut Sheet' },
@@ -270,29 +270,29 @@ var PROJECTS = {
         { tag: 'p', content: 'The Trelli System is based on a patented geometry invented by Jason Krugman in his studio at the New Lab in the Brooklyn Navy Yard. The Trelli system is ETL listed to the UL standard.' },
       ], details: [
       ] },
-      { type: 'full-image', src: '/images/page/trelli-led-luminaire/trelli3.png', alt: '' },
+      { type: 'full-image', src: '/images/project/general/trelli-led-luminaire/trelli3.png', alt: '' },
       { type: 'full-text', description: [
         { tag: 'p', content: 'Trelli and Penrose' },
         { tag: 'p', content: 'Since Trelli is a basic geometric system, using its characteristics leads us to an enormous body of work out there for inspiration. For example, Penrose Tiling is based on shapes that all have the same edge length (like Trelli\'s LED bars). While Trelli can be made with struts of varying lengths, imposing rules on the designs for specific projects allows for the creation of compelling and consistent patterns. Ever play with those colored pattern blocks as a kid? Same idea. All the edge lengths are the same. At certain key angles, they create a tiled surface without gaps.' },
       ], details: [
       ] },
-      { type: 'five-column-image', src: '/images/page/trelli-led-luminaire/trelli4.png', alt : '' },
+      { type: 'five-column-image', src: '/images/project/general/trelli-led-luminaire/trelli4.png', alt : '' },
       { type: 'full-text', description: [
         { tag: 'p', content: 'Trelli for Lettering' },
         { tag: 'p', content: 'Trelli is perfect for creating lettering from scratch. All the light bars are the same length and straight. We decided to create a font based on a triangular grid because it forms the most stable shapes when put together. Other means of making letters are possible as well. Ideal for large indoor applications.' },
       ], details: [
       ] },
-      { type: 'full-image', src: '/images/page/trelli-led-luminaire/trelli5.png', alt: '' },
-      { type: 'full-image', src: '/images/page/trelli-led-luminaire/trelli6.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/trelli-led-luminaire/trelli7.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/trelli-led-luminaire/trelli8.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/trelli-led-luminaire/trelli9.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/trelli-led-luminaire/trelli5.png', alt: '' },
+      { type: 'full-image', src: '/images/project/general/trelli-led-luminaire/trelli6.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/trelli-led-luminaire/trelli7.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/trelli-led-luminaire/trelli8.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/trelli-led-luminaire/trelli9.jpg', alt: '' },
     ]
   },
   'basket': {
     title: 'BASKET',
     blocks: [
-      { type: 'full-image', src: '/images/page/basket/basket1.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/basket/basket1.jpg', alt: '' },
       { type: 'full-text', description: [
         {
           tag: 'p',
@@ -328,18 +328,18 @@ var PROJECTS = {
           ].join(' ')
         }
       ] },
-      { type: 'full-image', src: '/images/page/basket/basket2.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/basket/basket3.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/basket/basket4.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/basket/basket5.gif', alt: '' },
-      { type: 'full-image', src: '/images/page/basket/basket6.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/basket/basket8.jpg', alt: '' }
+      { type: 'full-image', src: '/images/project/general/basket/basket2.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/basket/basket3.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/basket/basket4.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/basket/basket5.gif', alt: '' },
+      { type: 'full-image', src: '/images/project/general/basket/basket6.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/basket/basket8.jpg', alt: '' }
     ]
   },
   'gyroid': {
     title: 'GYROID',
     blocks: [
-      { type: 'full-image', src: '/images/page/gyroid/gyroid1.gif', alt: '' },
+      { type: 'full-image', src: '/images/project/general/gyroid/gyroid1.gif', alt: '' },
       { type: 'full-text', description: [
         {
           tag: 'p',
@@ -367,19 +367,19 @@ var PROJECTS = {
           ].join(' ')
         }
       ] },
-      { type: 'full-image', src: '/images/page/gyroid/gyroid2.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/gyroid/gyroid3.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/gyroid/gyroid4.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/gyroid/gyroid5.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/gyroid/gyroid6.gif', alt: '' },
-      { type: 'full-image', src: '/images/page/gyroid/gyroid7.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/gyroid/gyroid8.jpg', alt: '' }
+      { type: 'full-image', src: '/images/project/general/gyroid/gyroid2.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/gyroid/gyroid3.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/gyroid/gyroid4.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/gyroid/gyroid5.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/gyroid/gyroid6.gif', alt: '' },
+      { type: 'full-image', src: '/images/project/general/gyroid/gyroid7.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/gyroid/gyroid8.jpg', alt: '' }
     ]
   },
   'trelli-truss': {
     title: 'TRELLI TRUSS',
     blocks: [
-      { type: 'full-image', src: '/images/page/trelli-truss/tt1.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/trelli-truss/tt1.jpg', alt: '' },
       { type: 'full-text', description: [
         {
           tag: 'p',
@@ -398,11 +398,11 @@ var PROJECTS = {
           ].join(' ')
         }
       ] },
-      { type: 'full-image', src: '/images/page/trelli-truss/tt2.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/trelli-truss/tt3.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/trelli-truss/tt4.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/trelli-truss/tt5.jpg', alt: '' }
+      { type: 'full-image', src: '/images/project/general/trelli-truss/tt2.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/trelli-truss/tt3.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/trelli-truss/tt4.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/general/trelli-truss/tt5.jpg', alt: '' }
     ]
-  }
+  },
 };
 if (typeof window !== 'undefined') { window.PROJECTS = PROJECTS; }

@@ -16,7 +16,15 @@ except ImportError:
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
-DATA_JS_PATH = os.path.join(PROJECT_ROOT, "js", "general-project-data.js")
+
+# Target file options: general, commision, residential
+TARGET_FILES = {
+    "general": "general-project-data.js",
+    "commision": "commision-project-data.js",
+    "residential": "residential-project-data.js",
+}
+DEFAULT_TARGET = "general"
+DATA_JS_PATH = os.path.join(PROJECT_ROOT, "js", TARGET_FILES[DEFAULT_TARGET])
 
 
 def js_str(s):
@@ -117,68 +125,98 @@ def project_to_js(project_id, title, blocks):
     return "\n".join(lines)
 
 
-def add_project_to_file(project_id, title, blocks):
-    """Insert new project into PROJECTS in general-project-data.js. Returns (success, message)."""
-    if not os.path.isfile(DATA_JS_PATH):
-        return False, "general-project-data.js not found at %s" % DATA_JS_PATH
+def add_project_to_file(project_id, title, blocks, target=None):
+    """Insert new project into the chosen data file. Returns (success, message).
+    target: 'general' | 'commision' | 'residential'
+    """
+    target = (target or DEFAULT_TARGET).strip().lower()
+    if target not in TARGET_FILES:
+        return False, "Invalid target: %s (use general, commision, or residential)" % target
+    data_path = os.path.join(PROJECT_ROOT, "js", TARGET_FILES[target])
+    if not os.path.isfile(data_path):
+        return False, "%s not found at %s" % (TARGET_FILES[target], data_path)
 
-    with open(DATA_JS_PATH, "r", encoding="utf-8") as f:
-        content = f.read()
+    try:
+        with open(data_path, "r", encoding="utf-8") as f:
+            content = f.read()
+    except Exception as e:
+        return False, "Could not read %s: %s" % (TARGET_FILES[target], e)
 
-    # Find the closing "};" of the PROJECTS object (last one in file)
-    last_close = content.rfind("};")
+    # Find the closing "};" of the main object (prefer line-ending "};" to avoid matching inside strings)
+    last_close = content.rfind("\n};")
     if last_close == -1:
-        return False, "Could not find end of PROJECTS object"
+        last_close = content.rfind("};")
+    if last_close == -1:
+        return False, "Could not find end of object in %s" % TARGET_FILES[target]
 
     head = content[:last_close].rstrip()
-    tail = content[last_close:]  # "};" + rest of file
-    # Ensure previous project ends with comma
+    tail = content[last_close:]  # "\n};" or "};" + rest of file
+    # Ensure previous project ends with comma (so new entry is valid)
     if head.endswith("  }"):
         head = head[:-3] + "  },"
-    elif head.endswith("}"):
+    elif head.endswith("}") and not head.endswith("  }"):
         head = head + ","
 
     new_project = project_to_js(project_id, title, blocks)
-    new_content = head + "\n" + new_project + "\n};" + tail[2:]
+    # Insert new project before closing }; tail is "\n};" + rest or "};" + rest
+    if tail.startswith("\n"):
+        new_content = head + "\n" + new_project + tail
+    else:
+        new_content = head + "\n" + new_project + "\n};" + tail[2:]
 
-    with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
-        f.write(new_content)
-    return True, "Updated %s" % DATA_JS_PATH
+    try:
+        with open(data_path, "w", encoding="utf-8") as f:
+            f.write(new_content)
+    except Exception as e:
+        return False, "Could not write %s: %s" % (data_path, e)
+    return True, "Updated %s" % data_path
 
 
 if HAS_FLASK:
     app = Flask(__name__, static_folder=SCRIPT_DIR)
 
+    @app.after_request
+    def cors_headers(response):
+        response.headers["Access-Control-Allow-Origin"] = "*"
+        response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+        response.headers["Access-Control-Allow-Headers"] = "Content-Type"
+        return response
+
     @app.route("/")
     def index():
         return send_from_directory(SCRIPT_DIR, "index.html")
 
-    @app.route("/api/add-project", methods=["POST"])
+    @app.route("/api/add-project", methods=["POST", "OPTIONS"])
     def api_add_project():
+        if request.method == "OPTIONS":
+            return "", 204
         try:
             data = request.get_json(force=True)
             project_id = (data.get("projectId") or "").strip()
             title = (data.get("title") or "").strip()
             blocks = data.get("blocks") or []
+            target = (data.get("target") or DEFAULT_TARGET).strip().lower() or DEFAULT_TARGET
             if not project_id or not title:
                 return jsonify({"error": "projectId and title are required"}), 400
-            ok, msg = add_project_to_file(project_id, title, blocks)
+            ok, msg = add_project_to_file(project_id, title, blocks, target=target)
             if ok:
-                return jsonify({"ok": True, "path": msg})
+                return jsonify({"ok": True, "path": msg, "target": target, "file": TARGET_FILES.get(target, TARGET_FILES[DEFAULT_TARGET])})
             return jsonify({"error": msg}), 400
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
     def main():
         print("Add-Project Helper at http://localhost:5000")
-        print("general-project-data.js path:", DATA_JS_PATH)
+        for t, f in TARGET_FILES.items():
+            print("  %s -> js/%s" % (t, f))
         app.run(port=5000, debug=False)
 
 else:
     def main():
         print("Install Flask to enable the helper: pip install flask")
         print("Then run: python server.py")
-        print("general-project-data.js path:", DATA_JS_PATH)
+        for t, f in TARGET_FILES.items():
+            print("  %s -> js/%s" % (t, f))
 
 
 if __name__ == "__main__":

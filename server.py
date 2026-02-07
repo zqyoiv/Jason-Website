@@ -27,6 +27,10 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
         super().do_GET()
     
     def end_headers(self):
+        # Disable caching during development
+        self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
+        self.send_header('Pragma', 'no-cache')
+        self.send_header('Expires', '0')
         # Add CORS headers for development
         self.send_header('Access-Control-Allow-Origin', '*')
         super().end_headers()

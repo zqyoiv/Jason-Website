@@ -26,9 +26,16 @@
   </style>
 </head>
 <body>
-  <h1>Add project to general-project-data.js</h1>
+  <h1>Add project</h1>
 
   <form id="form">
+    <label>Add project to</label>
+    <select name="target" id="targetFile">
+      <option value="general">General (general-project-data.js)</option>
+      <option value="commision">Commission (commision-project-data.js)</option>
+      <option value="residential">Residential (residential-project-data.js)</option>
+    </select>
+
     <label>Project ID (URL slug, e.g. my-new-project)</label>
     <input type="text" name="projectId" required placeholder="my-new-project">
 
@@ -53,7 +60,7 @@
       <button type="button" id="addBlock">Add block</button>
     </div>
 
-    <button type="submit" style="margin-top: 20px;">Submit – update general-project-data.js</button>
+    <button type="submit" style="margin-top: 20px;">Submit – update selected file</button>
   </form>
 
   <div id="message"></div>
@@ -211,6 +218,8 @@
       const projectId = form.projectId.value.trim();
       const title = form.title.value.trim();
       const imageFolder = form.imageFolder.value.trim();
+      const targetSelect = document.getElementById('targetFile');
+      const target = (targetSelect && targetSelect.value) || 'general';
       const blocksData = collectBlocks(imageFolder);
 
       if (!projectId || !title) {
@@ -224,14 +233,15 @@
       fetch('/api/add-project', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ projectId, title, blocks: blocksData })
+        body: JSON.stringify({ projectId, title, target, blocks: blocksData })
       })
         .then(function (r) {
           if (!r.ok) return r.json().then(function (d) { throw new Error(d.error || r.statusText); });
           return r.json();
         })
         .then(function (data) {
-          messageEl.textContent = 'Project "' + projectId + '" added to general-project-data.js. ' + (data.path || '');
+          const file = data.file || 'general-project-data.js';
+          messageEl.textContent = 'Project "' + projectId + '" added to ' + file + '. ' + (data.path || '');
           messageEl.className = 'success';
           messageEl.style.display = 'block';
         })

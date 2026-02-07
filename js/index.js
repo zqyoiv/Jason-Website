@@ -87,39 +87,48 @@ const commissionedImages = [
   },
   {
     src: IMG_COMMISSIONED + 'botanicalThumb.png',
-    alt: 'Botanical Installation'
+    alt: 'Botanical Installation',
+    link: '/html/project.html?project=botanical-sculpture'
   },
   {
     src: IMG_COMMISSIONED + 'pumaThumb.png',
-    alt: 'Puma Installation'
+    alt: 'Puma Installation',
+    link: '/html/project.html?project=puma-holiday-display'
   },
   {
     src: IMG_COMMISSIONED + 'pingpongThumb4.jpg',
-    alt: 'Ping Pong Installation'
+    alt: 'Jeju Island Light Sculpture Park',
+    link: '/html/project.html?project=jeju-island-light-sculpture-park'
   },
   {
     src: IMG_COMMISSIONED + 'reefThumb2.jpg',
-    alt: 'Reef Installation'
+    alt: 'Reef Installation',
+     link: '/html/project.html?project=reef'
   },
   {
     src: IMG_COMMISSIONED + 'brainThumb.png',
-    alt: 'Brain Installation'
+    alt: 'Brain Installation',
+    link: '/html/project.html?project=brain-sculpture'
   },
   {
     src: IMG_COMMISSIONED + 'helixThumb.jpg',
-    alt: 'Helix Installation'
+    alt: 'Helix Installation',
+    link: '/html/project.html?project=helix'
   },
   {
     src: IMG_COMMISSIONED + 'constellationThumb.png',
-    alt: 'Constellation Installation'
+    alt: 'Constellation Installation',
+    link: '/html/project.html?project=ibm-constellation'
   },
   {
     src: IMG_COMMISSIONED + 'rhythmThumb.jpg',
-    alt: 'Rhythm Installation'
+    alt: 'Rhythm Installation',
+    link: '/html/project.html?project=rhythm-and-form'
   },
   {
     src: IMG_COMMISSIONED + 'fieldThumb.jpg',
-    alt: 'Field Installation'
+    alt: 'Field Installation',
+    link: '/html/project.html?project=modal-field'
   }
 ];
 

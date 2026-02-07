@@ -6,36 +6,44 @@
  * Block types: full-image, full-video, two-column-image, five-column-image,
  * two-column-txt, full-text, project-content (see general-project-data.js for structure).
  */
+
 (function () {
-  var g = typeof window !== 'undefined' ? window : {
-  'quantum-face': {
-    title: 'QUANTUM FACE',
-    blocks: [
-      { type: 'full-image', src: '/images/page/quantum-face/qf1.png', alt: '' },
-      { type: 'project-content', description: [
-        { tag: 'p', content: 'In 2023, Krugman Studio created Quantum Face in collaboration Yevgeny Koramblyum. The artwork uses Krugman\'s Jupiter LED system to create an electrified mesh of circuit boards describing the surface of the mesh.' },
-      ], details: [
-        { label: 'Dimensions:', value: '96\'\' x 60\'\' x 26\'\' ( H x W x D)' },
-      ] },
-      { type: 'full-image', src: '/images/page/quantum-face/qf2.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/quantum-face/qf3.jpg', alt: '' },
-      { type: 'full-image', src: '/images/page/quantum-face/qf4.png', alt: '' }
-    ]
-  }
-};
-  var PROJECTS = Object.assign(
-    {},
-    g.PROJECTS || {},
-    g.COMMISION_PROJECTS || {},
-    g.RESIDENTIAL_PROJECTS || {}
-  );
-  window.PROJECTS = PROJECTS;
+  var general = (typeof window !== 'undefined' && window.PROJECTS) ? window.PROJECTS : {};
+  var commission = (typeof window !== 'undefined' && window.COMMISION_PROJECTS) ? window.COMMISION_PROJECTS : {};
+  var residential = (typeof window !== 'undefined' && window.RESIDENTIAL_PROJECTS) ? window.RESIDENTIAL_PROJECTS : {};
+  var merged = {};
+  [general, commission, residential].forEach(function (source) {
+    for (var id in source) { if (Object.prototype.hasOwnProperty.call(source, id)) merged[id] = source[id]; }
+  });
+  window.PROJECTS = merged;
 })();
-var PROJECTS = typeof window !== 'undefined' ? window.PROJECTS : undefined;
+var PROJECTS = typeof window !== 'undefined' ? window.PROJECTS : {};
 
 function getProjectId() {
   var params = new URLSearchParams(window.location.search);
   return params.get('project') || '';
+}
+
+function getProjectPageVideoSize() {
+  var projectPage = document.querySelector('main.project-page');
+  var widthPx = 1200;
+  if (projectPage) {
+    var style = window.getComputedStyle(projectPage);
+    var paddingLeft = parseFloat(style.paddingLeft) || 0;
+    var paddingRight = parseFloat(style.paddingRight) || 0;
+    widthPx = projectPage.offsetWidth - paddingLeft - paddingRight;
+  }
+  var heightPx = Math.round(widthPx * 9 / 16);
+  return { width: widthPx, height: heightPx };
+}
+
+function updateVimeoIframeSizes() {
+  var size = getProjectPageVideoSize();
+  var iframes = document.querySelectorAll('.vimeo-iframe');
+  for (var i = 0; i < iframes.length; i++) {
+    iframes[i].setAttribute('width', String(size.width));
+    iframes[i].setAttribute('height', String(size.height));
+  }
 }
 
 function renderBlock(block) {
@@ -45,8 +53,14 @@ function renderBlock(block) {
       wrap.className = 'project-image-full';
       var img = document.createElement('img');
       img.src = block.src;
-      img.alt = block.alt;
+      img.alt = block.alt || '';
       wrap.appendChild(img);
+      if (block.alt) {
+        var altCap = document.createElement('p');
+        altCap.className = 'image-footnote';
+        altCap.textContent = block.alt;
+        wrap.appendChild(altCap);
+      }
       if (block.caption) {
         var cap = document.createElement('p');
         cap.className = 'image-footnote';
@@ -55,13 +69,38 @@ function renderBlock(block) {
       }
       break;
 
-    case 'full-video':
-      wrap.className = 'project-video-full';
-      var video = document.createElement('video');
-      video.src = block.src;
-      video.controls = true;
-      video.playsInline = true;
-      wrap.appendChild(video);
+    case 'full-video': {
+      var src = (block.src || '').trim();
+      var vimeoId = null;
+      var vimeoH = null;
+      if (src.indexOf('vimeo.com/') !== -1) {
+        var idMatch = src.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+        if (idMatch) vimeoId = idMatch[1];
+        var hMatch = src.match(/[?&]h=([^&]+)/);
+        if (hMatch) vimeoH = hMatch[1];
+      }
+      if (vimeoId) {
+        var iframeSrc = 'https://player.vimeo.com/video/' + vimeoId;
+        if (vimeoH) iframeSrc += '?h=' + encodeURIComponent(vimeoH);
+        var size = getProjectPageVideoSize();
+        var iframe = document.createElement('iframe');
+        iframe.className = 'vimeo-iframe';
+        iframe.setAttribute('title', 'vimeo-player');
+        iframe.setAttribute('width', String(size.width));
+        iframe.setAttribute('height', String(size.height));
+        iframe.src = iframeSrc;
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share');
+        iframe.setAttribute('allowfullscreen', '');
+        wrap.appendChild(iframe);
+      } else {
+        var video = document.createElement('video');
+        video.src = src;
+        video.controls = true;
+        video.setAttribute('playsinline', '');
+        wrap.appendChild(video);
+      }
       if (block.caption) {
         var vcap = document.createElement('p');
         vcap.className = 'image-footnote';
@@ -69,20 +108,39 @@ function renderBlock(block) {
         wrap.appendChild(vcap);
       }
       break;
+    }
 
     case 'two-column-image':
       wrap.className = 'project-two-col-image';
+      var leftCol = document.createElement('div');
+      leftCol.className = 'project-two-col-image-col';
       var leftImg = document.createElement('img');
       leftImg.src = block.left.src;
-      leftImg.alt = block.left.alt;
+      leftImg.alt = block.left.alt || '';
+      leftCol.appendChild(leftImg);
+      if (block.left.alt) {
+        var leftAltP = document.createElement('p');
+        leftAltP.className = 'image-footnote';
+        leftAltP.textContent = block.left.alt;
+        leftCol.appendChild(leftAltP);
+      }
+      var rightCol = document.createElement('div');
+      rightCol.className = 'project-two-col-image-col';
       var rightImg = document.createElement('img');
       rightImg.src = block.right.src;
-      rightImg.alt = block.right.alt;
-      wrap.appendChild(leftImg);
-      wrap.appendChild(rightImg);
+      rightImg.alt = block.right.alt || '';
+      rightCol.appendChild(rightImg);
+      if (block.right.alt) {
+        var rightAltP = document.createElement('p');
+        rightAltP.className = 'image-footnote';
+        rightAltP.textContent = block.right.alt;
+        rightCol.appendChild(rightAltP);
+      }
+      wrap.appendChild(leftCol);
+      wrap.appendChild(rightCol);
       if (block.caption) {
         var icap = document.createElement('p');
-        icap.className = 'image-footnote';
+        icap.className = 'image-footnote project-two-col-image-caption';
         icap.textContent = block.caption;
         wrap.appendChild(icap);
       }
@@ -133,6 +191,12 @@ function renderBlock(block) {
         colImg.alt = alt;
         wrap.appendChild(colImg);
       }
+      if (alt) {
+        var fiveAltP = document.createElement('p');
+        fiveAltP.className = 'image-footnote project-five-col-image-caption';
+        fiveAltP.textContent = alt;
+        wrap.appendChild(fiveAltP);
+      }
       break;
 
     case 'project-content':
@@ -173,9 +237,9 @@ function renderBlock(block) {
 
 function renderProject() {
   var projectId = getProjectId();
-  if (typeof PROJECTS === 'undefined') {
+  if (!PROJECTS || typeof PROJECTS !== 'object') {
     var container = document.getElementById('project-body');
-    if (container) container.innerHTML = '<p>Project data failed to load. Ensure the page is served from a server (e.g. http://localhost:8080) and that general-project-data.js loads before project.js.</p>';
+    if (container) container.innerHTML = '<p>Project data failed to load. Ensure the page is served from a server (e.g. http://localhost:8080) and that the project data scripts load before project.js.</p>';
     return;
   }
   var project = PROJECTS[projectId];
@@ -202,3 +266,11 @@ if (document.readyState === 'loading') {
 } else {
   renderProject();
 }
+
+(function () {
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(updateVimeoIframeSizes, 150);
+  });
+})();

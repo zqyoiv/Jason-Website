@@ -33,7 +33,8 @@ function renderBlockToHtml(block) {
     }
     case 'full-video': {
       const cap = block.caption ? `<p class="image-footnote">${escapeHtml(block.caption)}</p>` : '';
-      return `<div class="project-video-full"><video src="${escapeHtml(block.src)}" controls playsinline></video>${cap}</div>`;
+      const src = escapeHtml(block.src || '');
+      return `<div class="project-video-full"><video preload="" tabindex="-1" crossorigin="anonymous" playsinline="" style="" src="${src}"></video>${cap}</div>`;
     }
     case 'two-column-image': {
       const left = block.left || {};
