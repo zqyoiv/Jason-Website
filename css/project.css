@@ -91,6 +91,10 @@ iframe.vimeo-iframe {
     display: block;
 }
 
+.project-two-col-image .image-footnote {
+    text-align: center;
+}
+
 /* Full-width text block (single column, full width) */
 .project-full-text {
     width: 100%;
@@ -140,6 +144,11 @@ iframe.vimeo-iframe {
     display: block;
 }
 
+/* Image on left, text on right (reverse of default) */
+.project-two-col-txt-image.image-left {
+    grid-template-columns: 1fr 2fr;
+}
+
 .project-description {
     color: #000;
     font-size: 15px;
@@ -152,7 +161,7 @@ iframe.vimeo-iframe {
 
 .project-description h2 {
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 700;
     letter-spacing: 1px;
     margin-bottom: 20px;
     margin-top: 40px;
