@@ -292,6 +292,19 @@ iframe.vimeo-iframe {
         padding: 0 15px 40px 15px;
     }
 
+    .project-video-full {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .project-video-full iframe {
+        width: 100% !important;
+        max-width: 100%;
+        height: auto !important;
+        aspect-ratio: 9 / 16;
+        display: block;
+    }
+
     .project-title {
         font-size: 12px;
     }

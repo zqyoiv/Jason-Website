@@ -27,13 +27,26 @@ function getProjectId() {
 function getProjectPageVideoSize() {
   var projectPage = document.querySelector('main.project-page');
   var widthPx = 1200;
+  var vw = typeof window !== 'undefined' ? window.innerWidth : widthPx;
+  var vh = typeof window !== 'undefined' ? window.innerHeight : 0;
+  var isPortraitMobile = vw <= 768 && vh > 0 && vh > vw;
+
   if (projectPage) {
     var style = window.getComputedStyle(projectPage);
     var paddingLeft = parseFloat(style.paddingLeft) || 0;
     var paddingRight = parseFloat(style.paddingRight) || 0;
-    widthPx = projectPage.offsetWidth - paddingLeft - paddingRight;
+    var contentWidth = projectPage.offsetWidth - paddingLeft - paddingRight;
+    widthPx = contentWidth;
+    if (isPortraitMobile && vw > 0) {
+      var viewportWidth = vw - paddingLeft - paddingRight;
+      if (viewportWidth > widthPx) widthPx = viewportWidth;
+    }
+  } else if (isPortraitMobile && vw > 0) {
+    widthPx = Math.min(vw, 1200);
   }
-  var heightPx = Math.round(widthPx * 9 / 16);
+
+  var aspectRatio = isPortraitMobile ? (9 / 16) : (16 / 9);
+  var heightPx = Math.round(widthPx / aspectRatio);
   return { width: widthPx, height: heightPx };
 }
 
