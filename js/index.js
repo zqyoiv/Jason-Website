@@ -83,52 +83,62 @@ const commissionedImages = [
   {
     src: IMG_COMMISSIONED + 'faceThumb.png',
     alt: 'Face Installation',
-    link: '/html/project.html?project=quantum-face'
+    // link: '/html/project.html?project=quantum-face'
+    link: '/html/project/commission/quantum-face.html'
   },
   {
     src: IMG_COMMISSIONED + 'botanicalThumb.png',
     alt: 'Botanical Installation',
-    link: '/html/project.html?project=botanical-sculpture'
+    // link: '/html/project.html?project=botanical-sculpture'
+    link: '/html/project/commission/botanical-sculpture.html'
   },
   {
     src: IMG_COMMISSIONED + 'pumaThumb.png',
     alt: 'Puma Installation',
-    link: '/html/project.html?project=puma-holiday-display'
+    // link: '/html/project.html?project=puma-holiday-display'
+    link: '/html/project/commission/puma-holiday-display.html'
   },
   {
     src: IMG_COMMISSIONED + 'pingpongThumb4.jpg',
     alt: 'Jeju Island Light Sculpture Park',
-    link: '/html/project.html?project=jeju-island-light-sculpture-park'
+    // link: '/html/project.html?project=jeju-island-light-sculpture-park'
+    link: '/html/project/commission/jeju-island-light-sculpture-park.html'
   },
   {
     src: IMG_COMMISSIONED + 'reefThumb2.jpg',
     alt: 'Reef Installation',
-     link: '/html/project.html?project=reef'
+    // link: '/html/project.html?project=reef'
+    link: '/html/project/commission/reef.html'
   },
   {
     src: IMG_COMMISSIONED + 'brainThumb.png',
     alt: 'Brain Installation',
-    link: '/html/project.html?project=brain-sculpture'
+    // link: '/html/project.html?project=brain-sculpture'
+    link: '/html/project/commission/brain-sculpture.html'
   },
   {
     src: IMG_COMMISSIONED + 'helixThumb.jpg',
     alt: 'Helix Installation',
-    link: '/html/project.html?project=helix'
+    // link: '/html/project.html?project=helix'
+    link: '/html/project/commission/helix.html'
   },
   {
     src: IMG_COMMISSIONED + 'constellationThumb.png',
     alt: 'Constellation Installation',
-    link: '/html/project.html?project=ibm-constellation'
+    // link: '/html/project.html?project=ibm-constellation'
+    link: '/html/project/commission/ibm-constellation.html'
   },
   {
     src: IMG_COMMISSIONED + 'rhythmThumb.jpg',
     alt: 'Rhythm Installation',
-    link: '/html/project.html?project=rhythm-and-form'
+    // link: '/html/project.html?project=rhythm-and-form'
+    link: '/html/project/commission/rhythm-and-form.html'
   },
   {
     src: IMG_COMMISSIONED + 'fieldThumb.jpg',
     alt: 'Field Installation',
-    link: '/html/project.html?project=modal-field'
+    // link: '/html/project.html?project=modal-field'
+    link: '/html/project/commission/modal-field.html'
   }
 ];
 
