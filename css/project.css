@@ -23,6 +23,15 @@ iframe.vimeo-iframe {
     margin-bottom: 30px;
 }
 
+.project-page a {
+    color: #555;
+    text-decoration: underline;
+}
+
+.project-page a:hover {
+    color: #333;
+}
+
 .project-image-full {
     width: 100%;
     margin-bottom: 40px;
@@ -96,7 +105,7 @@ iframe.vimeo-iframe {
 .project-five-col-image {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 0;
+    gap: 10px;
     margin-bottom: 40px;
     width: 100%;
 }
@@ -289,6 +298,10 @@ iframe.vimeo-iframe {
 
     .project-five-col-image {
         grid-template-columns: 1fr;
+    }
+
+    .project-five-col-image img:not(:first-of-type) {
+        display: none;
     }
 
     .project-description {
