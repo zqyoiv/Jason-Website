@@ -170,10 +170,6 @@ body {
         align-items: flex-start;
     }
 
-    .logo {
-        width: 200px;
-    }
-
     .nav {
         gap: 25px;
     }
