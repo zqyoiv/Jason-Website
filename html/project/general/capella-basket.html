@@ -30,8 +30,27 @@
         <div class="project-image-full"><img src="/images/project/general/capella-basket/cb4.jpg" alt=""></div>
         <div class="project-image-full"><img src="/images/project/general/capella-basket/cb5.jpg" alt=""></div>
         <div class="project-image-full"><img src="/images/project/general/capella-basket/cb6.jpg" alt=""></div>
-        <div class="project-content project-content-full-width"><div class="project-description"><p>PROCESS</p><p>The sculpture is made from an electrified mesh of over 10,000 circuit boards supported by an aluminum frame. During construction, the sculpture was first set up in its entirety in a Brooklyn warehouse. After 8 weeks of assembly and fabrication, it was disassembled, rolled up and driven to Minneapolis. The below timelapses highlight the process as well as the final assembly and testing on site at Capella Tower.</p><p>To recreate the original artwork at a more than 10x scale, the process morphs from a physical exploration of handmade form into a digital design and fabrication exercise. The original sculpture was made with a series of systematic operations to transform a flat sheet of hand-soldered LED mesh into a 3-dimensional toroidal section. These operations are replicated digitally with key parameters of the original physical model programmed into the digital one. The initial constraints during the artwork's creation make it agnostic of scale or even medium.</p></div></div>
-        <div class="project-image-full"><img src="/images/project/general/capella-basket/cb7.jpg" alt=""></div>
+        <div class="project-video-full">
+            <iframe class="vimeo-iframe" title="vimeo-player" width="640" height="360" src="https://player.vimeo.com/video/405822810?autoplay=1&muted=1" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen=""></iframe>
+        </div>
+        <div class="project-full-text">
+            <div class="project-description">
+                <h2>Process</h2>
+                <p>The sculpture is made from an electrified mesh of over 10,000 circuit boards supported by an aluminum frame. During construction, the sculpture was first set up in its entirety in a Brooklyn warehouse. After 8 weeks of assembly and fabrication, it was disassembled, rolled up and driven to Minneapolis. The below timelapses highlight the process as well as the final assembly and testing on site at Capella Tower.</p>
+                <p>To recreate the original artwork at a more than 10x scale, the process morphs from a physical exploration of handmade form into a digital design and fabrication exercise. The original sculpture was made with a series of systematic operations to transform a flat sheet of hand-soldered LED mesh into a 3-dimensional toroidal section. These operations are replicated digitally with key parameters of the original physical model programmed into the digital one. The initial constraints during the artwork's creation make it agnostic of scale or even medium.</p>
+            </div>
+        </div>
+        <div id="capella-sketchfab-two-col" class="project-two-col-image">
+            <div class="project-two-col-image-col">
+                <iframe id="capella-sketchfab-iframe" title="Sketchfab 3D model" width="100%" height="362" src="https://sketchfab.com/models/c03a1339f46545d1b4f7cc6d411e23f8/embed?autospin=0.2&amp;autostart=1" frameborder="0" allow="autoplay; fullscreen; vr" allowfullscreen=""></iframe>
+            </div>
+            <div class="project-two-col-image-col">
+                <img id="capella-sketchfab-ref-img" src="/images/project/general/capella-basket/cb9.gif" alt="">
+            </div>
+        </div>
+        <div class="project-image-full">
+            <img src="/images/project/general/capella-basket/cb7.jpg" alt="">
+        </div>
         <div class="project-image-full"><img src="/images/project/general/capella-basket/cb8.jpg" alt=""></div>
     </div>
     </main>
@@ -64,5 +83,31 @@
             <div class="footer-copyright">ALL RIGHTS RESERVED © 2026</div>
         </div>
     </footer>
+    <script>
+(function () {
+    var block = document.getElementById('capella-sketchfab-two-col');
+    if (!block) return;
+    var iframe = document.getElementById('capella-sketchfab-iframe');
+    var refImg = document.getElementById('capella-sketchfab-ref-img');
+    if (!iframe || !refImg) return;
+    function sizeIframeToImage() {
+        var w = refImg.offsetWidth;
+        var h = refImg.offsetHeight;
+        if (w && h) {
+            iframe.setAttribute('width', w);
+            iframe.setAttribute('height', h);
+            iframe.style.width = w + 'px';
+            iframe.style.height = h + 'px';
+            iframe.style.aspectRatio = 'auto';
+        }
+    }
+    if (refImg.complete) {
+        sizeIframeToImage();
+    } else {
+        refImg.addEventListener('load', sizeIframeToImage);
+    }
+    window.addEventListener('resize', sizeIframeToImage);
+})();
+    </script>
 </body>
 </html>
