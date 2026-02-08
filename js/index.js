@@ -147,32 +147,38 @@ const residentialImages = [
   {
     src: IMG_RESIDENTIAL + 'jupiterThumb3.jpg',
     alt: 'Jupiter Installation',
-    link: '/html/project.html?project=jupiter'
+    // link: '/html/project.html?project=jupiter'
+    link: '/html/project/residential/jupiter.html'
   },
   {
     src: IMG_RESIDENTIAL + 'moleculeThumb.jpg',
     alt: 'Molecule Installation',
-    link: '/html/project.html?project=corona'
+    // link: '/html/project.html?project=corona'
+    link: '/html/project/residential/corona.html'
   },
   {
     src: IMG_RESIDENTIAL + 'diamondThumb.jpg',
     alt: 'Diamond Installation',
-    link: '/html/project.html?project=breathe-chandelier'
+    // link: '/html/project.html?project=breathe-chandelier'
+    link: '/html/project/residential/breathe-chandelier.html'
   },
   {
     src: IMG_RESIDENTIAL + 'fireThumb.jpg',
     alt: 'Fire Installation',
-    link: '/html/project.html?project=long-tube'
+    // link: '/html/project.html?project=long-tube'
+    link: '/html/project/residential/long-tube.html'
   },
   {
     src: IMG_RESIDENTIAL + 'hyparThumb.jpg',
     alt: 'Hypar Installation',
-    link: '/html/project.html?project=hypar'
+    // link: '/html/project.html?project=hypar'
+    link: '/html/project/residential/hypar.html'
   },
   {
     src: IMG_RESIDENTIAL + 'moonrakerThumb.jpg',
     alt: 'Moonraker Installation',
-    link: '/html/project.html?project=moonraker-chandelier'
+    // link: '/html/project.html?project=moonraker-chandelier'
+    link: '/html/project/residential/moonraker-chandelier.html'
   }
 ];
 
