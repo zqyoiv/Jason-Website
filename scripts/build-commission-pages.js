@@ -44,12 +44,16 @@ function renderBlockToHtml(block, baseIndent) {
 
   switch (block.type) {
     case 'full-image': {
-      const cap = block.caption
-        ? '\n' + sp(i1) + '<p class="image-footnote">' + escapeHtml(block.caption) + '</p>'
-        : '';
+      let fullImgFootnotes = '';
+      if (block.alt) {
+        fullImgFootnotes += '\n' + sp(i1) + '<p class="image-footnote">' + escapeHtml(block.alt) + '</p>';
+      }
+      if (block.caption) {
+        fullImgFootnotes += '\n' + sp(i1) + '<p class="image-footnote">' + escapeHtml(block.caption) + '</p>';
+      }
       return (
         sp(i) + '<div class="project-image-full">\n' +
-        sp(i1) + '<img src="' + escapeHtml(block.src) + '" alt="' + escapeHtml(block.alt || '') + '">' + cap + '\n' +
+        sp(i1) + '<img src="' + escapeHtml(block.src) + '" alt="' + escapeHtml(block.alt || '') + '">' + fullImgFootnotes + '\n' +
         sp(i) + '</div>'
       );
     }
@@ -82,14 +86,26 @@ function renderBlockToHtml(block, baseIndent) {
     case 'two-column-image': {
       const left = block.left || {};
       const right = block.right || {};
+      let leftColAlt = '';
+      if (left.alt) {
+        leftColAlt = '\n' + sp(i2) + '<p class="image-footnote">' + escapeHtml(left.alt) + '</p>';
+      }
+      let rightColAlt = '';
+      if (right.alt) {
+        rightColAlt = '\n' + sp(i2) + '<p class="image-footnote">' + escapeHtml(right.alt) + '</p>';
+      }
       let cap = '';
       if (block.caption) {
-        cap = '\n' + sp(i1) + '<p class="image-footnote">' + escapeHtml(block.caption) + '</p>';
+        cap = '\n' + sp(i1) + '<p class="image-footnote project-two-col-image-caption">' + escapeHtml(block.caption) + '</p>';
       }
       return (
         sp(i) + '<div class="project-two-col-image">\n' +
-        sp(i1) + '<img src="' + escapeHtml(left.src || '') + '" alt="' + escapeHtml(left.alt || '') + '">\n' +
-        sp(i1) + '<img src="' + escapeHtml(right.src || '') + '" alt="' + escapeHtml(right.alt || '') + '">' + cap + '\n' +
+        sp(i1) + '<div class="project-two-col-image-col">\n' +
+        sp(i2) + '<img src="' + escapeHtml(left.src || '') + '" alt="' + escapeHtml(left.alt || '') + '">' + leftColAlt + '\n' +
+        sp(i1) + '</div>\n' +
+        sp(i1) + '<div class="project-two-col-image-col">\n' +
+        sp(i2) + '<img src="' + escapeHtml(right.src || '') + '" alt="' + escapeHtml(right.alt || '') + '">' + rightColAlt + '\n' +
+        sp(i1) + '</div>' + cap + '\n' +
         sp(i) + '</div>'
       );
     }
@@ -153,7 +169,7 @@ function renderBlockToHtml(block, baseIndent) {
       const imgs = Array(5).fill('\n' + sp(i1) + '<img src="' + escapeHtml(src) + '" alt="' + alt + '">').join('');
       let footnote = '';
       if (block.alt) {
-        footnote = '\n' + sp(i1) + '<p class="image-footnote">' + alt + '</p>';
+        footnote = '\n' + sp(i1) + '<p class="image-footnote project-five-col-image-caption">' + alt + '</p>';
       }
       return sp(i) + '<div class="project-five-col-image">' + imgs + footnote + '\n' + sp(i) + '</div>';
     }
