@@ -224,3 +224,39 @@ if (document.readyState === 'loading') {
 } else {
   initGalleries();
 }
+
+/**
+ * Index page: desktop Works sub-nav (toggle row + scroll on link click).
+ * Mobile hamburger + overlay are handled by include-header.js on all pages.
+ */
+function initIndexNav() {
+  var worksRow = document.getElementById('nav-works-row');
+  var worksTrigger = document.querySelector('.nav-link[data-works-trigger]');
+  var worksLinks = document.querySelectorAll('.nav-works-link');
+
+  function scrollToSection(id) {
+    var el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  if (worksTrigger && worksRow) {
+    worksTrigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      var isOpen = worksRow.classList.toggle('is-open');
+      worksRow.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    });
+  }
+
+  worksLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var section = link.getAttribute('data-section');
+      if (section) {
+        e.preventDefault();
+        scrollToSection(section);
+      }
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initIndexNav);
+document.addEventListener('header-loaded', initIndexNav);
