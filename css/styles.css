@@ -273,7 +273,7 @@ body {
     }
 
     .header {
-        padding: 30px 15px;
+        padding: 20px 15px;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 0;
@@ -283,7 +283,7 @@ body {
     }
 
     .header .logo {
-        max-width: 100%;
+        max-width: 60%;
         width: auto;
     }
 

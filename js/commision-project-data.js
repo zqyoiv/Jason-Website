@@ -353,6 +353,62 @@ var COMMISION_PROJECTS = {
       { type: 'full-image', src: '/images/project/commission/modal-field/mf13.jpg', alt: '' },
       { type: 'full-image', src: '/images/project/commission/modal-field/mf14.jpg', alt: '' }
     ]
+  },
+  'jeju-coral': {
+    title: 'CORAL',
+    blocks: [
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/coral/c1.jpg', alt: '' },
+      { type: 'project-content', description: [
+        { tag: 'p', content: 'Cave Coral borrow their forms from the tree-like deep-sea worms that live adjacent to deep-sea vents. The sculptures are made with modular Y-shaped sections hand cut and welded from stainless steel tube. They are placed in nooks within Jeju\'s LAF\'s cave system, residing in a similar environment as the Urchins.' },
+        { tag: 'p', content: 'Permanent, completed July 2018.' },
+      ], details: [
+        { label: 'Dimensions:', value: '4 sculptures 60" x 40" x 40"' },
+      ] },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/coral/c2.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/coral/c3.jpg', alt: '' }
+    ]
+  },
+  'jeju-urchins': {
+    title: 'URCHINS',
+    blocks: [
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/urchins/u1.jpg', alt: '' },
+      { type: 'project-content', description: [
+        { tag: 'p', content: 'Cave Urchins are a set of 7 interactive light sculptures designed for the underground volcanic caves on site at Jeju LAF. The tropical seas and incredible mollusks served as artistic inspiration in determining what other fantastic creatures could possibly exist within Jeju\'s underground volcanic ecosystem. Each urchin has a small sensor to detect motion nearby. It reflects its awareness of your presence by flickering the glowing lights within its dozens of protruding orbs. Similar to the cuttlefish, the Cave Urchin pulses and sweeps its body colors. Rich opalescent blues, maroons and oranges sometimes indicate it is alarmed by disturbances nearby.' },
+        { tag: 'p', content: 'Permanent, completed July 2018.' },
+      ], details: [
+        { label: 'Dimensions:', value: '3 sculptures 60" x 60" x 60", 4 sculptures 44" x 44" x 44"' },
+      ] },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/urchins/u2.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/urchins/u3.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/urchins/u4.jpg', alt: '' }
+    ]
+  },
+  'jeju-particle-matters': {
+    title: 'PARTICLE MATTERS',
+    blocks: [
+      { type: 'full-video', src: 'https://vimeo.com/307786170?fl=pl&fe=cm' },
+      { type: 'project-content', description: [
+        { tag: 'p', content: 'Particle Matters is a kinetic light sculpture that uses thousands of points of reflected light to visualize subtle changes in the breeze. Built to withstand the typhoons that commonly occur on this volcanic island, the artwork displays life in both subtle and extreme conditions. A soft twinkling sound is made as the moving air disrupts the hanging stainless steel rods and balls, causing them to twist and sway in the breezes. As beautiful during the day as at night, long grass is gradually reaching upwards to meet the 20-foot strands of balls, moving together with them in the shifting air currents. Inspiration comes from white-tipped grasses that are traditionally planted over memorial sites on the island (shown at the bottom of the page).' },
+        { tag: 'p', content: 'Permanent, completed July 2018.' },
+      ], details: [
+        { label: 'Dimensions:', value: '100\' x 100\' x 30\'' },
+      ] },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/particle-matters/pm1.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/particle-matters/pm2.jpg', alt: '' },
+      { type: 'full-text', description: [
+        {
+          tag: 'p',
+          content: [
+            'The thousands of weather-resistant balls float above the green tea fields of Jeju Island, about 50 miles from mainland Korea.',
+            'A small rolling mountain provides a curving backdrop as viewers gaze through the array of floating balls.',
+            'At night, the sculpture is lit with an array of low voltage halogen fixtures on stakes.',
+          ].join(' ')
+        },
+      ] },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/particle-matters/pm3.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/particle-matters/pm4.jpg', alt: '' },
+      { type: 'full-video', src: 'https://vimeo.com/309087465?fl=pl&fe=cm' }
+    ]
   }
 };
 if (typeof window !== 'undefined') { window.COMMISION_PROJECTS = COMMISION_PROJECTS; }
