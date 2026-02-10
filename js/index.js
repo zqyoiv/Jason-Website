@@ -200,6 +200,10 @@ function renderGalleryGrid(gridEl, items) {
       a.href = item.link;
       a.className = 'gallery-item gallery-link';
       a.appendChild(img);
+      const overlay = document.createElement('span');
+      overlay.className = 'gallery-item-overlay';
+      overlay.textContent = item.alt || '';
+      a.appendChild(overlay);
       gridEl.appendChild(a);
     } else {
       const div = document.createElement('div');
