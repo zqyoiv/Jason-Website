@@ -211,6 +211,28 @@ body {
     letter-spacing: 1px;
 }
 
+/* Toast shown when email is copied in footer */
+.footer-email-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.footer-email-toast.footer-email-toast-visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 /* Gallery styles */
 .gallery {
     padding: 0 20px 40px 20px;
@@ -246,6 +268,29 @@ body {
 .gallery-link {
     display: block;
     text-decoration: none;
+}
+
+/* Desktop only: hover overlay with project name */
+@media (min-width: 769px) {
+  .gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .gallery-item:hover .gallery-item-overlay {
+    opacity: 1;
+  }
 }
 
 /* Section styles */
