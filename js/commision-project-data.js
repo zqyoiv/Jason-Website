@@ -409,6 +409,52 @@ var COMMISION_PROJECTS = {
       { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/particle-matters/pm4.jpg', alt: '' },
       { type: 'full-video', src: 'https://vimeo.com/309087465?fl=pl&fe=cm' }
     ]
+  },
+  'jeju-digital-geology': {
+    title: 'DIGITAL GEOLOGY',
+    blocks: [
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/digital-geology/dg1.gif', alt: '' },
+      { type: 'project-content', description: [
+        { tag: 'p', content: 'In this manifestation of site specific art, there large boulders split open to reveal enormous geodes with an interesting digital mutation. Instead of large crystals, the boulders\' interiors are filled with circular illuminated LED pockets, displaying brightly colored organic content.' },
+        { tag: 'p', content: 'On the island of Jeju, volcanic formations are a part of the landscape. Pumice and pocketed grey stone are pocked with holes created when gases were trapped within the rapidly cooling stone. These artworks are a play on the geological processes that create cavities within seemingly solid objects. In this case, large boulders have fractured to reveal crystalized formation within, brimming with digital technology and light. Krugman Studio created three large Digital Geodes, each with its own content and character. These customized LED screens are designed to be all-weather and are made with welded stainless steel tubing, custom injection molded diffusers, and outdoor LED components, power supplies and controllers, all nestled within fabricated boulders.' },
+        { tag: 'p', content: 'Permanent, completed July 2018.' },
+      ], details: [
+        { label: 'Dimensions:', value: '3 sculptures, 9\' x 6\' x 5\', 9\' x 6\' x 4\' and 4\' x 16\' x 3\'' },
+      ] },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/digital-geology/dg2.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/digital-geology/dg3.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/digital-geology/dg4.jpg', alt: '' }
+    ]
+  },
+  'radiosome': {
+    title: 'RADIOSOME',
+    blocks: [
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/radiosome/r1.gif', alt: '' },
+      { type: 'project-content', description: [
+        { tag: 'p', content: 'Radiosome slowly twirls in the darkness, accentuating its spiralling form. Situated in a large volcanic depression with a pool of water beneath, it is unclear if the sculpture has grown there or perhaps emerged from somewhere deeper down. The surrounding landscape is home to a variety of pre-historic tropical plants that grow within the shady environment, getting bursts of sun throughout the day through the skylights in the canopy structure covering the space.' },
+        { tag: 'p', content: 'The sculpture\'s ten meter spine supports rib-like protrusions tipped with diffused points of ultra-violet light. At the border of the visible spectrum, the two rows of lights call to mind the helical structures that form the DNA of all living things. The sculpture\'s size and its slow rotation also draw parallels to celestial bodies spinning through space emitting energy at various wavelengths.' },
+        { tag: 'p', content: 'Permanent, completed July 2018.' },
+      ], details: [
+        { label: 'Dimensions:', value: '30\' x 18\' x 18\'' },
+      ] },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/radiosome/r2.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/radiosome/r3.jpg', alt: '' }
+    ]
+  },
+  'diamond-cluster': {
+    title: 'DIAMOND CLUSTER',
+    blocks: [
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/diamond-cluster/d1.jpg', alt: '' },
+      { type: 'project-content', description: [
+        { tag: 'p', content: 'Permanent, completed July 2018.' },
+      ], details: [
+        { label: 'Dimensions:', value: '6 fabric cubes, 8\' x 8\' x 8 each, lit with LED' },
+      ] },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/diamond-cluster/d2.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/diamond-cluster/d3.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/diamond-cluster/d4.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/diamond-cluster/d5.jpg', alt: '' }
+    ]
   }
 };
 if (typeof window !== 'undefined') { window.COMMISION_PROJECTS = COMMISION_PROJECTS; }

@@ -403,6 +403,6 @@ var PROJECTS = {
       { type: 'full-image', src: '/images/project/general/trelli-truss/tt4.jpg', alt: '' },
       { type: 'full-image', src: '/images/project/general/trelli-truss/tt5.jpg', alt: '' }
     ]
-  },
+  }
 };
 if (typeof window !== 'undefined') { window.PROJECTS = PROJECTS; }
