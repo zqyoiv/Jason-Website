@@ -1,0 +1,10 @@
+{
+  "name": "jason-krugman-website",
+  "private": true,
+  "scripts": {
+    "thumbnails-to-webp": "node scripts/thumbnails-to-webp.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.0"
+  }
+}

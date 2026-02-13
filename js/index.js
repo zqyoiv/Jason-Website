@@ -4,76 +4,65 @@
  * Change the path constants below if you move image folders.
  */
 
-const IMG_TOP = '/images/top/';
-const IMG_COMMISSIONED = '/images/commision/';
-const IMG_RESIDENTIAL = '/images/residential/';
+const IMG_SELECTED = '/images/thumbnail/webp/selected/';
+const IMG_COMMISSIONED = '/images/thumbnail/webp/commission/';
+const IMG_RESIDENTIAL = '/images/thumbnail/webp/residential/';
 
-// General gallery (main works grid)
+// General gallery (main works grid) – selected works
 const generalImages = [
   {
-    src: IMG_TOP + 'jupiterBevThumb.jpg',
+    src: IMG_SELECTED + 'jupiterBevThumb.webp',
     alt: 'Jupiter Bev Installation',
-    // link: '/html/project.html?project=jupiter-surface-beverly-hills'
     link: '/html/project/general/jupiter-surface-beverly-hills.html'
   },
   {
-    src: IMG_TOP + 'murmuration2Thumb.png',
+    src: IMG_SELECTED + 'murmuration2Thumb.webp',
     alt: 'Murmuration Installation',
-    // link: '/html/project.html?project=murmuration'
     link: '/html/project/general/murmuration.html'
   },
   {
-    src: IMG_TOP + 'jupiterSpace2Thumb.png',
+    src: IMG_SELECTED + 'jupiterSpace2Thumb.webp',
     alt: 'Jupiter Space',
-    // link: '/html/project.html?project=jupiter-space'
     link: '/html/project/general/jupiter-space.html'
   },
   {
-    src: IMG_TOP + 'capellaThumb3.jpg',
+    src: IMG_SELECTED + 'capellaThumb3.webp',
     alt: 'Capella',
-    // link: '/html/project.html?project=capella-basket'
     link: '/html/project/general/capella-basket.html'
   },
   {
-    src: IMG_TOP + 'capHelixThumb4.png',
+    src: IMG_SELECTED + 'capHelixThumb4.webp',
     alt: 'Cap Helix Installation',
-    // link: '/html/project.html?project=capillary-helix'
     link: '/html/project/general/capillary-helix.html'
   },
   {
-    src: IMG_TOP + 'meshThumb.jpg',
+    src: IMG_SELECTED + 'meshThumb.webp',
     alt: 'Mesh Installation',
-    // link: '/html/project.html?project=meshes'
     link: '/html/project/general/meshes.html'
   },
   {
-    src: IMG_TOP + 'strawThumb.jpg',
+    src: IMG_SELECTED + 'strawThumb.webp',
     alt: 'Straw Installation',
-    // link: '/html/project.html?project=straws-sculpture-system'
     link: '/html/project/general/straws-sculpture-system.html'
   },
   {
-    src: IMG_TOP + 'trelliThumb3.jpg',
+    src: IMG_SELECTED + 'trelliThumb3.webp',
     alt: 'Trelli Installation',
-    // link: '/html/project.html?project=trelli-led-luminaire'
     link: '/html/project/general/trelli-led-luminaire.html'
   },
   {
-    src: IMG_TOP + 'basketThumb1.jpg',
+    src: IMG_SELECTED + 'basketThumb1.webp',
     alt: 'Basket Installation',
-    // link: '/html/project.html?project=basket'
     link: '/html/project/general/basket.html'
   },
   {
-    src: IMG_TOP + 'gyroidThumb.jpg',
+    src: IMG_SELECTED + 'gyroidThumb.webp',
     alt: 'Gyroid Installation',
-    // link: '/html/project.html?project=gyroid'
     link: '/html/project/general/gyroid.html'
   },
   {
-    src: IMG_TOP + 'trussThumb.jpg',
+    src: IMG_SELECTED + 'trussThumb.webp',
     alt: 'Truss Installation',
-    // link: '/html/project.html?project=trelli-truss'
     link: '/html/project/general/trelli-truss.html'
   }
 ];
@@ -81,63 +70,53 @@ const generalImages = [
 // Commissioned Designs
 const commissionedImages = [
   {
-    src: IMG_COMMISSIONED + 'faceThumb.png',
+    src: IMG_COMMISSIONED + 'faceThumb.webp',
     alt: 'Face Installation',
-    // link: '/html/project.html?project=quantum-face'
     link: '/html/project/commission/quantum-face.html'
   },
   {
-    src: IMG_COMMISSIONED + 'botanicalThumb.png',
+    src: IMG_COMMISSIONED + 'botanicalThumb.webp',
     alt: 'Botanical Installation',
-    // link: '/html/project.html?project=botanical-sculpture'
     link: '/html/project/commission/botanical-sculpture.html'
   },
   {
-    src: IMG_COMMISSIONED + 'pumaThumb.png',
+    src: IMG_COMMISSIONED + 'pumaThumb.webp',
     alt: 'Puma Installation',
-    // link: '/html/project.html?project=puma-holiday-display'
     link: '/html/project/commission/puma-holiday-display.html'
   },
   {
-    src: IMG_COMMISSIONED + 'pingpongThumb4.jpg',
+    src: IMG_COMMISSIONED + 'pingpongThumb4.webp',
     alt: 'Jeju Island Light Sculpture Park',
-    // link: '/html/project.html?project=jeju-island-light-sculpture-park'
     link: '/html/project/commission/jeju-island-light-sculpture-park.html'
   },
   {
-    src: IMG_COMMISSIONED + 'reefThumb2.jpg',
+    src: IMG_COMMISSIONED + 'reefThumb2.webp',
     alt: 'Reef Installation',
-    // link: '/html/project.html?project=reef'
     link: '/html/project/commission/reef.html'
   },
   {
-    src: IMG_COMMISSIONED + 'brainThumb.png',
+    src: IMG_COMMISSIONED + 'brainThumb.webp',
     alt: 'Brain Installation',
-    // link: '/html/project.html?project=brain-sculpture'
     link: '/html/project/commission/brain-sculpture.html'
   },
   {
-    src: IMG_COMMISSIONED + 'helixThumb.jpg',
+    src: IMG_COMMISSIONED + 'helixThumb.webp',
     alt: 'Helix Installation',
-    // link: '/html/project.html?project=helix'
     link: '/html/project/commission/helix.html'
   },
   {
-    src: IMG_COMMISSIONED + 'constellationThumb.png',
+    src: IMG_COMMISSIONED + 'constellationThumb.webp',
     alt: 'Constellation Installation',
-    // link: '/html/project.html?project=ibm-constellation'
     link: '/html/project/commission/ibm-constellation.html'
   },
   {
-    src: IMG_COMMISSIONED + 'rhythmThumb.jpg',
+    src: IMG_COMMISSIONED + 'rhythmThumb.webp',
     alt: 'Rhythm Installation',
-    // link: '/html/project.html?project=rhythm-and-form'
     link: '/html/project/commission/rhythm-and-form.html'
   },
   {
-    src: IMG_COMMISSIONED + 'fieldThumb.jpg',
+    src: IMG_COMMISSIONED + 'fieldThumb.webp',
     alt: 'Field Installation',
-    // link: '/html/project.html?project=modal-field'
     link: '/html/project/commission/modal-field.html'
   }
 ];
@@ -145,39 +124,33 @@ const commissionedImages = [
 // Residential Special Projects
 const residentialImages = [
   {
-    src: IMG_RESIDENTIAL + 'jupiterThumb3.jpg',
+    src: IMG_RESIDENTIAL + 'jupiterThumb3.webp',
     alt: 'Jupiter Installation',
-    // link: '/html/project.html?project=jupiter'
     link: '/html/project/residential/jupiter.html'
   },
   {
-    src: IMG_RESIDENTIAL + 'moleculeThumb.jpg',
+    src: IMG_RESIDENTIAL + 'moleculeThumb.webp',
     alt: 'Molecule Installation',
-    // link: '/html/project.html?project=corona'
     link: '/html/project/residential/corona.html'
   },
   {
-    src: IMG_RESIDENTIAL + 'diamondThumb.jpg',
+    src: IMG_RESIDENTIAL + 'diamondThumb.webp',
     alt: 'Diamond Installation',
-    // link: '/html/project.html?project=breathe-chandelier'
     link: '/html/project/residential/breathe-chandelier.html'
   },
   {
-    src: IMG_RESIDENTIAL + 'fireThumb.jpg',
+    src: IMG_RESIDENTIAL + 'fireThumb.webp',
     alt: 'Fire Installation',
-    // link: '/html/project.html?project=long-tube'
     link: '/html/project/residential/long-tube.html'
   },
   {
-    src: IMG_RESIDENTIAL + 'hyparThumb.jpg',
+    src: IMG_RESIDENTIAL + 'hyparThumb.webp',
     alt: 'Hypar Installation',
-    // link: '/html/project.html?project=hypar'
     link: '/html/project/residential/hypar.html'
   },
   {
-    src: IMG_RESIDENTIAL + 'moonrakerThumb.jpg',
+    src: IMG_RESIDENTIAL + 'moonrakerThumb.webp',
     alt: 'Moonraker Installation',
-    // link: '/html/project.html?project=moonraker-chandelier'
     link: '/html/project/residential/moonraker-chandelier.html'
   }
 ];
