@@ -166,6 +166,10 @@ body {
     .header .nav {
         display: flex;
     }
+
+    .gallery-section-links {
+        display: none;
+    }
 }
 
 /* Footer styles */
@@ -251,6 +255,12 @@ body {
     gap: 16px 32px;
     margin-bottom: 32px;
     padding: 0 20px;
+}
+
+@media (min-width: 769px) {
+    .gallery-section-links {
+        display: none !important;
+    }
 }
 
 .gallery-section-link {
@@ -379,10 +389,6 @@ body {
 
     .nav-hamburger.is-open .nav-hamburger-bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .gallery-section-links {
-        display: none;
     }
 
     .gallery,
