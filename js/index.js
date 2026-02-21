@@ -13,57 +13,57 @@ const generalImages = [
   {
     src: IMG_SELECTED + 'jupiterBevThumb.webp',
     alt: 'Jupiter Bev Installation',
-    link: '/html/project/general/jupiter-surface-beverly-hills.html'
+    link: '/jupiterSurfaceBeverlyHills/'
   },
   {
     src: IMG_SELECTED + 'murmuration2Thumb.webp',
     alt: 'Murmuration Installation',
-    link: '/html/project/general/murmuration.html'
+    link: '/murmuration/'
   },
   {
     src: IMG_SELECTED + 'jupiterSpace2Thumb.webp',
     alt: 'Jupiter Space',
-    link: '/html/project/general/jupiter-space.html'
+    link: '/jupiterSpace/'
   },
   {
     src: IMG_SELECTED + 'capellaThumb3.webp',
     alt: 'Capella',
-    link: '/html/project/general/capella-basket.html'
+    link: '/capellaBasket/'
   },
   {
     src: IMG_SELECTED + 'capHelixThumb4.webp',
     alt: 'Cap Helix Installation',
-    link: '/html/project/general/capillary-helix.html'
+    link: '/capillaryHelix/'
   },
   {
     src: IMG_SELECTED + 'meshThumb.webp',
     alt: 'Mesh Installation',
-    link: '/html/project/general/meshes.html'
+    link: '/meshes/'
   },
   {
     src: IMG_SELECTED + 'strawThumb.webp',
     alt: 'Straw Installation',
-    link: '/html/project/general/straws-sculpture-system.html'
+    link: '/straws/'
   },
   {
     src: IMG_SELECTED + 'trelliThumb3.webp',
     alt: 'Trelli Installation',
-    link: '/html/project/general/trelli-led-luminaire.html'
+    link: '/trelli/'
   },
   {
     src: IMG_SELECTED + 'basketThumb1.webp',
     alt: 'Basket Installation',
-    link: '/html/project/general/basket.html'
+    link: '/basket/'
   },
   {
     src: IMG_SELECTED + 'gyroidThumb.webp',
     alt: 'Gyroid Installation',
-    link: '/html/project/general/gyroid.html'
+    link: '/gyroid/'
   },
   {
     src: IMG_SELECTED + 'trussThumb.webp',
     alt: 'Truss Installation',
-    link: '/html/project/general/trelli-truss.html'
+    link: '/trelliTruss/'
   }
 ];
 
@@ -72,52 +72,52 @@ const commissionedImages = [
   {
     src: IMG_COMMISSIONED + 'faceThumb.webp',
     alt: 'Face Installation',
-    link: '/html/project/commission/quantum-face.html'
+    link: '/quantumFace/'
   },
   {
     src: IMG_COMMISSIONED + 'botanicalThumb.webp',
     alt: 'Botanical Installation',
-    link: '/html/project/commission/botanical-sculpture.html'
+    link: '/botanical/'
   },
   {
     src: IMG_COMMISSIONED + 'pumaThumb.webp',
     alt: 'Puma Installation',
-    link: '/html/project/commission/puma-holiday-display.html'
+    link: '/puma/'
   },
   {
     src: IMG_COMMISSIONED + 'pingpongThumb4.webp',
     alt: 'Jeju Island Light Sculpture Park',
-    link: '/html/project/commission/jeju-island-light-sculpture-park.html'
+    link: '/jeju/'
   },
   {
     src: IMG_COMMISSIONED + 'reefThumb2.webp',
     alt: 'Reef Installation',
-    link: '/html/project/commission/reef.html'
+    link: '/reef/'
   },
   {
     src: IMG_COMMISSIONED + 'brainThumb.webp',
     alt: 'Brain Installation',
-    link: '/html/project/commission/brain-sculpture.html'
+    link: '/brain/'
   },
   {
     src: IMG_COMMISSIONED + 'helixThumb.webp',
     alt: 'Helix Installation',
-    link: '/html/project/commission/helix.html'
+    link: '/helix/'
   },
   {
     src: IMG_COMMISSIONED + 'constellationThumb.webp',
     alt: 'Constellation Installation',
-    link: '/html/project/commission/ibm-constellation.html'
+    link: '/ibm/'
   },
   {
     src: IMG_COMMISSIONED + 'rhythmThumb.webp',
     alt: 'Rhythm Installation',
-    link: '/html/project/commission/rhythm-and-form.html'
+    link: '/rhythmAndForm/'
   },
   {
     src: IMG_COMMISSIONED + 'fieldThumb.webp',
     alt: 'Field Installation',
-    link: '/html/project/commission/modal-field.html'
+    link: '/modalField/'
   }
 ];
 
@@ -126,32 +126,32 @@ const residentialImages = [
   {
     src: IMG_RESIDENTIAL + 'jupiterThumb3.webp',
     alt: 'Jupiter Installation',
-    link: '/html/project/residential/jupiter.html'
+    link: '/jupiter/'
   },
   {
     src: IMG_RESIDENTIAL + 'moleculeThumb.webp',
     alt: 'Molecule Installation',
-    link: '/html/project/residential/corona.html'
+    link: '/corona/'
   },
   {
     src: IMG_RESIDENTIAL + 'diamondThumb.webp',
     alt: 'Diamond Installation',
-    link: '/html/project/residential/breathe-chandelier.html'
+    link: '/doubleDiamond/'
   },
   {
     src: IMG_RESIDENTIAL + 'fireThumb.webp',
     alt: 'Fire Installation',
-    link: '/html/project/residential/long-tube.html'
+    link: '/fireIsland/'
   },
   {
     src: IMG_RESIDENTIAL + 'hyparThumb.webp',
     alt: 'Hypar Installation',
-    link: '/html/project/residential/hypar.html'
+    link: '/hypar/'
   },
   {
     src: IMG_RESIDENTIAL + 'moonrakerThumb.webp',
     alt: 'Moonraker Installation',
-    link: '/html/project/residential/moonraker-chandelier.html'
+    link: '/moonraker/'
   }
 ];
 

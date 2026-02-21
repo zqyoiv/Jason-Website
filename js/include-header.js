@@ -11,7 +11,7 @@
       placeholder.innerHTML = html;
       var path = typeof window !== 'undefined' && window.location ? window.location.pathname : '';
       var isAbout = path.indexOf('about') !== -1;
-      var isIndex = path.endsWith('index.html') || path.endsWith('/') || path === '' || path === '/html/';
+      var isIndex = path === '/' || path === '/works' || path === '' || path.endsWith('index.html');
       var worksLink = placeholder.querySelector('.nav-link[data-works-trigger]');
       var aboutLink = placeholder.querySelector('.nav-link[href*="about"]');
       if (worksLink) worksLink.classList.toggle('active', !isAbout);
@@ -69,6 +69,6 @@
       try { window.dispatchEvent(new CustomEvent('header-loaded')); } catch (e) {}
     })
     .catch(function () {
-      placeholder.innerHTML = '<header class="header"><a href="/html/index.html" class="logo-link">Jason Krugman Studio</a><nav class="nav"><a href="/html/index.html" class="nav-link">Works</a><a href="/html/about.html" class="nav-link">About</a></nav></header>';
+      placeholder.innerHTML = '<header class="header"><a href="/" class="logo-link">Jason Krugman Studio</a><nav class="nav"><a href="/works" class="nav-link">Works</a><a href="/about" class="nav-link">About</a></nav></header>';
     });
 })();

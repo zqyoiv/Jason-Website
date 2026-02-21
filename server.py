@@ -1,29 +1,63 @@
 #!/usr/bin/env python3
 """
 Simple HTTP server for Jason Krugman Studio website.
-Run this script and open http://localhost:8000 in your browser.
+Pretty URLs are read from url-mapping.json; requests like /quantumFace
+serve the corresponding html/project/... file.
 """
 
 import http.server
 import socketserver
 import os
 import sys
+import json
 
 PORT = 8080
 
+# Load pretty URL → file path mapping (relative to project root)
+def _load_url_mapping():
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "url-mapping.json")
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data.get("project", {})
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        sys.stderr.write(f"Warning: could not load url-mapping.json: {e}\n")
+        return {}
+
+URL_MAPPING = _load_url_mapping()
+
+# Main pages: pretty path → file path
+PAGE_REWRITES = {
+    "/": "html/index.html",
+    "/works": "html/index.html",
+    "/about": "html/about.html",
+    "/project": "html/project.html",
+}
+
+
 class CustomHandler(http.server.SimpleHTTPRequestHandler):
     """Custom handler to serve files from the correct directory."""
-    
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=os.path.dirname(os.path.abspath(__file__)), **kwargs)
-    
+
     def do_GET(self):
-        # Redirect root to main site
-        if self.path in ('/', ''):
-            self.send_response(302)
-            self.send_header('Location', '/html/index.html')
-            self.end_headers()
+        raw = self.path.split("?")[0]
+        path = raw.rstrip("/") or "/"
+
+        # Main pages
+        if path in PAGE_REWRITES:
+            self.path = "/" + PAGE_REWRITES[path]
+            super().do_GET()
             return
+
+        # Project pretty URLs from url-mapping.json (e.g. /quantumFace or /jeju/pingpong)
+        slug = path.lstrip("/")
+        if slug and slug in URL_MAPPING:
+            self.path = "/" + URL_MAPPING[slug]
+            super().do_GET()
+            return
+
         super().do_GET()
     
     def end_headers(self):

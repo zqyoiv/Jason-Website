@@ -441,19 +441,19 @@ var COMMISION_PROJECTS = {
       { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/radiosome/r3.jpg', alt: '' }
     ]
   },
-  'diamond-cluster': {
-    title: 'DIAMOND CLUSTER',
+  'diatom-cluster': {
+    title: 'DIATOM CLUSTER',
     blocks: [
-      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/diamond-cluster/d1.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/diatom-cluster/d1.jpg', alt: '' },
       { type: 'project-content', description: [
         { tag: 'p', content: 'Permanent, completed July 2018.' },
       ], details: [
         { label: 'Dimensions:', value: '6 fabric cubes, 8\' x 8\' x 8 each, lit with LED' },
       ] },
-      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/diamond-cluster/d2.jpg', alt: '' },
-      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/diamond-cluster/d3.jpg', alt: '' },
-      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/diamond-cluster/d4.jpg', alt: '' },
-      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/diamond-cluster/d5.jpg', alt: '' }
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/diatom-cluster/d2.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/diatom-cluster/d3.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/diatom-cluster/d4.jpg', alt: '' },
+      { type: 'full-image', src: '/images/project/commission/jeju-island-light-sculpture-park/diatom-cluster/d5.jpg', alt: '' }
     ]
   }
 };
