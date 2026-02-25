@@ -58,13 +58,44 @@ iframe.vimeo-iframe {
     display: block;
 }
 
-/* Vimeo iframe: responsive, same width as content */
+/* Vimeo iframe: responsive, class-driven aspect ratio */
 .project-video-full iframe {
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;
     max-width: 100%;
     display: block;
+}
+
+.project-video-full iframe.landscape-video {
+    aspect-ratio: 16 / 9;
+}
+
+.project-video-full iframe.portrait-video {
+    aspect-ratio: 9 / 16;
+}
+
+/* Desktop: center portrait video (height = viewport, width derived from 9:16) */
+@media (orientation: landscape) {
+    .project-video-full:has(iframe.portrait-video) {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Mobile (viewport portrait: vh >= vw): video always width-driven, full width */
+@media (orientation: portrait) {
+    .project-video-full iframe.landscape-video {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+    }
+    .project-video-full iframe.portrait-video {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 9 / 16;
+    }
 }
 
 /* Two-column image block */
@@ -353,7 +384,7 @@ iframe.vimeo-iframe {
     width: auto;
 }
 
-/* Mobile responsive */
+/* Mobile responsive (viewport portrait = mobile; layout breakpoint) */
 @media (max-width: 768px) {
     .project-page {
         padding: 0 15px 40px 15px;
@@ -362,14 +393,6 @@ iframe.vimeo-iframe {
     .project-video-full {
         width: 100%;
         max-width: 100%;
-    }
-
-    .project-video-full iframe {
-        width: 100% !important;
-        max-width: 100%;
-        height: auto !important;
-        aspect-ratio: 9 / 16;
-        display: block;
     }
 
     .project-title {
