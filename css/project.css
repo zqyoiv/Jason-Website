@@ -230,6 +230,7 @@ iframe.vimeo-iframe {
     margin-bottom: 15px;
 }
 
+/* Desktop: label and value on separate lines */
 .detail-label {
     display: block;
     font-weight: 400;
@@ -240,6 +241,19 @@ iframe.vimeo-iframe {
 .detail-value {
     display: block;
     font-weight: 400;
+}
+
+/* Mobile: label and value on the same line */
+@media (max-width: 768px) {
+    .detail-label {
+        display: inline;
+        margin-bottom: 0;
+        margin-right: 0.35em;
+    }
+
+    .detail-value {
+        display: inline;
+    }
 }
 
 /* About page */
