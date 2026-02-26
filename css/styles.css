@@ -159,6 +159,10 @@ body {
 }
 
 @media (min-width: 769px) {
+    .header {
+        align-items: flex-end;
+    }
+
     .nav-hamburger {
         display: none !important;
     }
