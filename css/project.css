@@ -402,7 +402,7 @@ iframe.vimeo-iframe {
 
     .project-content {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 0;
     }
 
     .project-two-col-image {
