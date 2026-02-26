@@ -16,6 +16,7 @@ iframe.vimeo-iframe {
 }
 
 .project-title {
+    font-family: 'AKZ', sans-serif;
     font-size: 32px;
     font-weight: 400;
     letter-spacing: 3px;
