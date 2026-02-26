@@ -354,8 +354,8 @@ body {
     }
 
     .header .logo {
-        max-width: 60%;
-        width: auto;
+        width: 30vw;
+        max-width: 30vw;
     }
 
     .nav-hamburger {
