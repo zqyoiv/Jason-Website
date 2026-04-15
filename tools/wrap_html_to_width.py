@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Reformat HTML under html/ to a readable max line width (default 80).
-Uses BeautifulSoup prettify plus text wrapping for long text and long opening tags.
+Uses BeautifulSoup decode() with 2-space indent per nesting level (not BS default 1),
+plus text wrapping for long text and long opening tags.
 Run from repo root: python tools/wrap_html_to_width.py
 """
 
@@ -15,12 +16,20 @@ from pathlib import Path
 
 try:
     from bs4 import BeautifulSoup
+    from bs4.dammit import EntitySubstitution
+    from bs4.formatter import HTMLFormatter
 except ImportError:
     print("Install: pip install beautifulsoup4", file=sys.stderr)
     raise SystemExit(1)
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML_DIR = ROOT / "html"
+
+# Match formatter="minimal" but use 2 spaces per nesting level (default BS is 1).
+_HTML_FORMAT = HTMLFormatter(
+    entity_substitution=EntitySubstitution.substitute_xml,
+    indent=2,
+)
 
 def iter_attr_tokens(attr_blob: str) -> list[str]:
     """Split HTML attribute string into tokens (name=value or boolean). Best-effort."""
@@ -232,7 +241,7 @@ def wrap_long_double_quoted_attributes(text: str, width: int) -> str:
 
 def format_html(content: str, width: int) -> str:
     soup = BeautifulSoup(content, "html.parser")
-    pretty = soup.prettify()
+    pretty = soup.decode(indent_level=0, formatter=_HTML_FORMAT)
     step = postprocess_physical_lines(pretty, width=width)
     step = wrap_long_double_quoted_attributes(step, width=width)
     return step + "\n"
