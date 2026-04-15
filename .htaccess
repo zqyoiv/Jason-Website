@@ -49,6 +49,7 @@ RewriteRule ^jupiter/?$ html/project/residential/jupiter.html [L]
 RewriteRule ^hypar/?$ html/project/residential/hypar.html [L]
 
 RewriteRule ^beekman/?$ html/other/beekman.html [L]
+RewriteRule ^ledGrillz/?$ html/other/led-grillz.html [L]
 # php -- BEGIN cPanel-generated handler, do not edit
 # This domain inherits the “PHP” package.
 # php -- END cPanel-generated handler, do not edit

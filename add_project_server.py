@@ -4,7 +4,8 @@ Add-project helper: form at /add-project; POST /api/add-project updates the repo
 (HTML, WebP thumbnail + js/index.js for gallery sections, or HTML under html/other
 with .htaccess only, optional url-mapping.json).
 
-Python only — uses Pillow for WebP (no Node / no sharp).
+Python only — uses Pillow for WebP (no Node / no sharp). Installed deps also run
+``tools/wrap_html_to_width.py`` on each new project page (2-space indent, ~80 cols).
 
   pip install -r requirements-add-project.txt
   python add_project_server.py
@@ -15,6 +16,7 @@ Open http://127.0.0.1:5050/add-project  (override with ADD_PROJECT_PORT / ADD_PR
 from __future__ import annotations
 
 import html
+import importlib.util
 import json
 import os
 import re
@@ -199,6 +201,44 @@ def build_project_html(title: str, description: str) -> str:
     )
 
 
+_WRAP_HTML_FORMAT = None
+_WRAP_HTML_TRIED = False
+
+
+def format_project_html_file(path: str) -> None:
+    """
+    Reformat written project HTML to 2-space indent and ~80 char lines using
+    tools/wrap_html_to_width.py. No-op if BeautifulSoup is missing or load fails.
+    """
+    global _WRAP_HTML_FORMAT, _WRAP_HTML_TRIED
+    if _WRAP_HTML_TRIED and _WRAP_HTML_FORMAT is None:
+        return
+    if not _WRAP_HTML_TRIED:
+        _WRAP_HTML_TRIED = True
+        script = os.path.join(ROOT, "tools", "wrap_html_to_width.py")
+        if os.path.isfile(script):
+            try:
+                spec = importlib.util.spec_from_file_location("_wrap_html_to_width", script)
+                mod = importlib.util.module_from_spec(spec)
+                assert spec.loader
+                spec.loader.exec_module(mod)
+                _WRAP_HTML_FORMAT = mod.format_html
+            except Exception:
+                _WRAP_HTML_FORMAT = None
+        else:
+            _WRAP_HTML_FORMAT = None
+    if _WRAP_HTML_FORMAT is None:
+        return
+    try:
+        with open(path, encoding="utf-8") as f:
+            raw = f.read()
+        out = _WRAP_HTML_FORMAT(raw, 80)
+        with open(path, "w", encoding="utf-8", newline="\n") as f:
+            f.write(out)
+    except Exception:
+        pass
+
+
 def save_image_as_webp(src_path: str, dst_path: str) -> None:
     """Write a WebP thumbnail using Pillow (no Node)."""
     with Image.open(src_path) as im:
@@ -314,6 +354,7 @@ def api_add_project():
     try:
         with open(html_abs, "w", encoding="utf-8", newline="\n") as f:
             f.write(build_project_html(title, description))
+        format_project_html_file(html_abs)
 
         if gallery:
             new_index = insert_index_gallery_line(

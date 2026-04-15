@@ -1,0 +1,13 @@
+---
+description: HTML in this repo uses 2-space indent and ~80 char line length
+globs: html/**/*.html
+alwaysApply: false
+---
+
+# HTML formatting (site pages)
+
+- **Indentation**: 2 spaces per nesting level (no tabs).
+- **Line length**: aim for a **maximum of ~80 characters** per line; wrap text and split long tag attributes across lines when needed.
+- **Normalize**: After editing or generating HTML, run `python tools/wrap_html_to_width.py` from the repo root so output matches the rest of `html/`. The add-project helper (`add_project_server.py`) runs the same formatter on newly created project pages when `beautifulsoup4` is installed.
+
+Do not hand-format with 4-space indents or single-space nesting for these files unless matching an existing exception in the same directory.
