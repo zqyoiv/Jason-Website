@@ -1,27 +1,52 @@
 <header class="header">
-    <a href="/" class="logo-link">
-        <div class="logo-container">
-            <picture>
-                <source media="(max-width: 768px)" srcset="/images/logo/logo5-small.png">
-                <img src="/images/logo/logo5.svg" alt="Jason Krugman Studio" class="logo">
-            </picture>
-        </div>
-    </a>
-    <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
-        <span class="nav-hamburger-bar"></span>
-        <span class="nav-hamburger-bar"></span>
-        <span class="nav-hamburger-bar"></span>
-    </button>
-    <nav class="nav">
-        <a href="/works" class="nav-link" data-works-trigger>Works</a>
-        <a href="/about" class="nav-link">About</a>
-    </nav>
+ <a class="logo-link" href="/">
+  <div class="logo-container">
+   <picture>
+    <source media="(max-width: 768px)" srcset="/images/logo/logo5-small.png"/>
+    <img alt="Jason Krugman Studio" class="logo" src="/images/logo/logo5.svg"/>
+   </picture>
+  </div>
+ </a>
+ <button aria-expanded="false"
+   aria-label="Open menu"
+   class="nav-hamburger"
+   type="button">
+  <span class="nav-hamburger-bar">
+  </span>
+  <span class="nav-hamburger-bar">
+  </span>
+  <span class="nav-hamburger-bar">
+  </span>
+ </button>
+ <nav class="nav">
+  <a class="nav-link" data-works-trigger="" href="/works">
+   Works
+  </a>
+  <a class="nav-link" href="/about">
+   About
+  </a>
+ </nav>
 </header>
-<div class="nav-overlay" id="nav-overlay" aria-hidden="true">
-    <nav class="nav-overlay-inner">
-        <a href="/works#section-selected" class="nav-overlay-link" data-section="section-selected">Selected Works</a>
-        <a href="/works#section-commissioned" class="nav-overlay-link" data-section="section-commissioned">Commissioned Designs</a>
-        <a href="/works#section-residential" class="nav-overlay-link" data-section="section-residential">Residential Special Projects</a>
-        <a href="/about" class="nav-overlay-link">About</a>
-    </nav>
+<div aria-hidden="true" class="nav-overlay" id="nav-overlay">
+ <nav class="nav-overlay-inner">
+  <a class="nav-overlay-link"
+    data-section="section-selected"
+    href="/works#section-selected">
+   Selected Works
+  </a>
+  <a class="nav-overlay-link"
+    data-section="section-commissioned"
+    href="/works#section-commissioned">
+   Commissioned Designs
+  </a>
+  <a class="nav-overlay-link"
+    data-section="section-residential"
+    href="/works#section-residential">
+   Residential Special Projects
+  </a>
+  <a class="nav-overlay-link" href="/about">
+   About
+  </a>
+ </nav>
 </div>
+

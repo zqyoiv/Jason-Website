@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add project – Helper</title>
-    <link rel="icon" href="/images/favicon/jupiter_gif_still.png" type="image/png">
-    <link rel="stylesheet" href="/css/styles.css">
-    <style>
-        .helper-wrap { max-width: 640px; margin: 0 auto; padding: 24px 20px 80px; }
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Add project – Helper
+  </title>
+  <link href="/images/favicon/jupiter_gif_still.png"
+    rel="icon"
+    type="image/png" />
+  <link href="/css/styles.css" rel="stylesheet"/>
+  <style>
+   .helper-wrap { max-width: 640px; margin: 0 auto; padding: 24px 20px 80px; }
         .helper-wrap h1 { font-size: 22px; font-weight: 400; margin-bottom: 8px; }
         .helper-note { font-size: 14px; color: #444; line-height: 1.5; margin-bottom: 28px; }
         .helper-field { margin-bottom: 18px; }
@@ -23,66 +27,136 @@
         #helper-result { margin-top: 20px; font-size: 14px; white-space: pre-wrap; }
         #helper-result.ok { color: #0a5; }
         #helper-result.err { color: #a00; }
-    </style>
-</head>
-<body>
-    <div id="header-placeholder"></div>
-    <script src="/js/include-header.js"></script>
-
-    <main class="helper-wrap">
-        <h1>Add project (local helper)</h1>
-        <p class="helper-note">
-            <strong>Python only</strong> (Flask + Pillow for WebP). From the project root run:
-            <code style="background:#f0f0f0;padding:2px 6px;">pip install -r requirements-add-project.txt</code>
-            then
-            <code style="background:#f0f0f0;padding:2px 6px;">python add_project_server.py</code>
-            and open <strong>http://127.0.0.1:5050/add-project</strong>.
-            This edits files on your machine; upload to FTP / Apache for production. Preview short URLs with <code style="background:#f0f0f0;padding:2px 6px;">python server.py</code>.
-        </p>
-
-        <form id="helper-form">
-            <div class="helper-field">
-                <label for="title">Project title</label>
-                <input type="text" id="title" name="title" required placeholder="e.g. Royal Centre">
-            </div>
-            <div class="helper-field">
-                <label for="section">Section (main page grid)</label>
-                <select id="section" name="section" required>
-                    <option value="general">General (Selected works)</option>
-                    <option value="commission">Commissioned designs</option>
-                    <option value="residential">Residential special projects</option>
-                    <option value="html_other">HTML / other (html/other — no grid, no thumbnail)</option>
-                </select>
-                <p class="hint" id="section-html-other-hint" hidden>
-                    Page is saved under <code>html/other/</code>. Only the pretty URL and <code>.htaccess</code> are added — not the main works grid.
-                </p>
-            </div>
-            <div class="helper-field">
-                <label for="pretty_url">Pretty URL slug</label>
-                <input type="text" id="pretty_url" name="pretty_url" required placeholder="e.g. royalCentre or my-project" pattern="[A-Za-z][A-Za-z0-9-]*" autocomplete="off">
-                <p class="hint">One path segment (no slashes). Site link becomes <code>/yourSlug/</code>.</p>
-            </div>
-            <div class="helper-field">
-                <label for="description">Description</label>
-                <textarea id="description" name="description" placeholder="Plain text for the new project page; line breaks become line breaks on the page."></textarea>
-            </div>
-            <div class="helper-field" id="thumbnail-field">
-                <label for="thumbnail">Thumbnail image</label>
-                <input type="file" id="thumbnail" name="thumbnail" accept="image/jpeg,image/png,image/webp,image/gif,.jpg,.jpeg,.png,.webp" required>
-                <p class="hint" id="thumbnail-hint">Converted to WebP in the same folder as your other section thumbnails.</p>
-            </div>
-            <div class="helper-actions">
-                <button type="submit" id="helper-submit">Submit – add project</button>
-            </div>
-        </form>
-        <div id="helper-result" role="status" aria-live="polite"></div>
-    </main>
-
-    <div id="footer-placeholder"></div>
-    <script src="/js/include-footer.js"></script>
-
-    <script>
-(function () {
+  </style>
+ </head>
+ <body>
+  <div id="header-placeholder">
+  </div>
+  <script src="/js/include-header.js">
+  </script>
+  <main class="helper-wrap">
+   <h1>
+    Add project (local helper)
+   </h1>
+   <p class="helper-note">
+    <strong>
+     Python only
+    </strong>
+    (Flask + Pillow for WebP). From the project root run:
+    <code style="background:#f0f0f0;padding:2px 6px;">
+     pip install -r requirements-add-project.txt
+    </code>
+    then
+    <code style="background:#f0f0f0;padding:2px 6px;">
+     python add_project_server.py
+    </code>
+    and open
+    <strong>
+     http://127.0.0.1:5050/add-project
+    </strong>
+    .
+            This edits files on your machine; upload to FTP / Apache for
+            production. Preview short URLs with
+    <code style="background:#f0f0f0;padding:2px 6px;">
+     python server.py
+    </code>
+    .
+   </p>
+   <form id="helper-form">
+    <div class="helper-field">
+     <label for="title">
+      Project title
+     </label>
+     <input id="title"
+       name="title"
+       placeholder="e.g. Royal Centre"
+       required=""
+       type="text" />
+    </div>
+    <div class="helper-field">
+     <label for="section">
+      Section (main page grid)
+     </label>
+     <select id="section" name="section" required="">
+      <option value="general">
+       General (Selected works)
+      </option>
+      <option value="commission">
+       Commissioned designs
+      </option>
+      <option value="residential">
+       Residential special projects
+      </option>
+      <option value="html_other">
+       HTML / other (html/other — no grid, no thumbnail)
+      </option>
+     </select>
+     <p class="hint" hidden="" id="section-html-other-hint">
+      Page is saved under
+      <code>
+       html/other/
+      </code>
+      . Only the pretty URL and
+      <code>
+       .htaccess
+      </code>
+      are added — not the main works grid.
+     </p>
+    </div>
+    <div class="helper-field">
+     <label for="pretty_url">
+      Pretty URL slug
+     </label>
+     <input autocomplete="off"
+       id="pretty_url"
+       name="pretty_url"
+       pattern="[A-Za-z][A-Za-z0-9-]*"
+       placeholder="e.g. royalCentre or my-project"
+       required=""
+       type="text" />
+     <p class="hint">
+      One path segment (no slashes). Site link becomes
+      <code>
+       /yourSlug/
+      </code>
+      .
+     </p>
+    </div>
+    <div class="helper-field">
+     <label for="description">
+      Description
+     </label>
+     <textarea id="description" name="description" placeholder="Plain text for the new project page; line breaks become line breaks on
+       the page."></textarea>
+    </div>
+    <div class="helper-field" id="thumbnail-field">
+     <label for="thumbnail">
+      Thumbnail image
+     </label>
+     <input accept="image/jpeg,image/png,image/webp,image/gif,.jpg,.jpeg,.png,.webp"
+       id="thumbnail"
+       name="thumbnail"
+       required=""
+       type="file" />
+     <p class="hint" id="thumbnail-hint">
+      Converted to WebP in the same folder as your other section thumbnails.
+     </p>
+    </div>
+    <div class="helper-actions">
+     <button id="helper-submit" type="submit">
+      Submit – add project
+     </button>
+    </div>
+   </form>
+   <div aria-live="polite" id="helper-result" role="status">
+   </div>
+  </main>
+  <div id="footer-placeholder">
+  </div>
+  <script src="/js/include-footer.js">
+  </script>
+  <script>
+   (function () {
   var form = document.getElementById('helper-form');
   var btn = document.getElementById('helper-submit');
   var out = document.getElementById('helper-result');
@@ -139,6 +213,7 @@
       .then(function () { btn.disabled = false; });
   });
 })();
-    </script>
-</body>
+  </script>
+ </body>
 </html>
+
