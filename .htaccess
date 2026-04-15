@@ -51,6 +51,16 @@ RewriteRule ^hypar/?$ html/project/residential/hypar.html [L]
 RewriteRule ^beekman/?$ html/other/beekman.html [L]
 RewriteRule ^ledGrillz/?$ html/other/led-grillz.html [L]
 RewriteRule ^bamboo/?$ html/other/bamboo.html [L]
+RewriteRule ^cube/?$ html/other/cube.html [L]
+RewriteRule ^deepstaria/?$ html/other/deepstaria.html [L]
+RewriteRule ^erbutler/?$ html/other/er-butler.html [L]
+RewriteRule ^glassphemy/?$ html/other/glassphemy.html [L]
+RewriteRule ^basisPoint/?$ html/other/basis-point.html [L]
+RewriteRule ^artifixMori/?$ html/other/artifix-mori.html [L]
+RewriteRule ^overlay/?$ html/other/overlay.html [L]
+RewriteRule ^firefly/?$ html/other/firefly.html [L]
+RewriteRule ^organicElectric/?$ html/other/organic-electric.html [L]
+RewriteRule ^livingObjects/?$ html/other/living-objects.html [L]
 # php -- BEGIN cPanel-generated handler, do not edit
 # This domain inherits the “PHP” package.
 # php -- END cPanel-generated handler, do not edit
