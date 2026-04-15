@@ -11,6 +11,7 @@ const IMG_RESIDENTIAL = '/images/thumbnail/webp/residential/';
 // General gallery (main works grid) – selected works
 // title = project page h1.project-title for hover overlay
 const generalImages = [
+  { src: IMG_SELECTED + 'royalCentreThumb.webp', alt: 'Royal Centre Installation', link: '/royalCentre/', title: 'ROYAL CENTRE' },
   { src: IMG_SELECTED + 'jupiterBevThumb.webp', alt: 'Jupiter Bev Installation', link: '/jupiterSurfaceBeverlyHills/', title: "JUPITER'S SURFACE" },
   { src: IMG_SELECTED + 'murmuration2Thumb.webp', alt: 'Murmuration Installation', link: '/murmuration/', title: 'MURMURATION' },
   { src: IMG_SELECTED + 'jupiterSpace2Thumb.webp', alt: 'Jupiter Space', link: '/jupiterSpace/', title: 'JUPITER SPACE' },

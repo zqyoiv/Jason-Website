@@ -1,0 +1,52 @@
+# cPanel: no Passenger – use Apache mod_rewrite only.
+# If the site lives in a subfolder (e.g. /new-jks-website2026/), set:
+#   RewriteBase /new-jks-website2026/
+
+RewriteEngine On
+
+# Main pages
+RewriteRule ^$ html/index.html [L]
+RewriteRule ^works/?$ html/index.html [L]
+RewriteRule ^about/?$ html/about.html [L]
+RewriteRule ^project/?$ html/project.html [L]
+
+# Project pretty URLs (from url-mapping.json)
+RewriteRule ^jeju/?$ html/project/commission/jeju-island-light-sculpture-park.html [L]
+RewriteRule ^jupiterSurfaceBeverlyHills/?$ html/project/general/jupiter-surface-beverly-hills.html [L]
+RewriteRule ^murmuration/?$ html/project/general/murmuration.html [L]
+RewriteRule ^capellaBasket/?$ html/project/general/capella-basket.html [L]
+RewriteRule ^quantumFace/?$ html/project/commission/quantum-face.html [L]
+RewriteRule ^jeju/coral/?$ html/project/commission/jeju-coral.html [L]
+RewriteRule ^doubleDiamond/?$ html/project/residential/breathe-chandelier.html [L]
+RewriteRule ^fireIsland/?$ html/project/residential/long-tube.html [L]
+RewriteRule ^moonraker/?$ html/project/residential/moonraker-chandelier.html [L]
+RewriteRule ^reef/?$ html/project/commission/reef.html [L]
+RewriteRule ^jeju/radiosome/?$ html/project/commission/radiosome.html [L]
+RewriteRule ^brain/?$ html/project/commission/brain-sculpture.html [L]
+RewriteRule ^jeju/digitalGeology/?$ html/project/commission/jeju-digital-geology.html [L]
+RewriteRule ^jeju/pingpong/?$ html/project/commission/jeju-particle-matters.html [L]
+RewriteRule ^rhythmProcess/?$ html/project/commission/rhythm-process.html [L]
+RewriteRule ^modalField/?$ html/project/commission/modal-field.html [L]
+RewriteRule ^helix/?$ html/project/commission/helix.html [L]
+RewriteRule ^jeju/island-park/?$ html/project/commission/jeju-island-light-sculpture-park.html [L]
+RewriteRule ^botanical/?$ html/project/commission/botanical-sculpture.html [L]
+RewriteRule ^ibm/?$ html/project/commission/ibm-constellation.html [L]
+RewriteRule ^rhythmAndForm/?$ html/project/commission/rhythm-and-form.html [L]
+RewriteRule ^jeju/urchins/?$ html/project/commission/jeju-urchins.html [L]
+RewriteRule ^jeju/diatomCluster/?$ html/project/commission/jeju-diatom-cluster.html [L]
+RewriteRule ^puma/?$ html/project/commission/puma-holiday-display.html [L]
+RewriteRule ^straws/?$ html/project/general/straws-sculpture-system.html [L]
+RewriteRule ^trelliTruss/?$ html/project/general/trelli-truss.html [L]
+RewriteRule ^capillaryHelix/?$ html/project/general/capillary-helix.html [L]
+RewriteRule ^trelli/?$ html/project/general/trelli-led-luminaire.html [L]
+RewriteRule ^gyroid/?$ html/project/general/gyroid.html [L]
+RewriteRule ^basket/?$ html/project/general/basket.html [L]
+RewriteRule ^meshes/?$ html/project/general/meshes.html [L]
+RewriteRule ^jupiterSpace/?$ html/project/general/jupiter-space.html [L]
+RewriteRule ^corona/?$ html/project/residential/corona.html [L]
+RewriteRule ^jupiter/?$ html/project/residential/jupiter.html [L]
+RewriteRule ^hypar/?$ html/project/residential/hypar.html [L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# This domain inherits the “PHP” package.
+# php -- END cPanel-generated handler, do not edit
