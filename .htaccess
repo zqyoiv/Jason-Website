@@ -50,6 +50,7 @@ RewriteRule ^hypar/?$ html/project/residential/hypar.html [L]
 
 RewriteRule ^beekman/?$ html/other/beekman.html [L]
 RewriteRule ^ledGrillz/?$ html/other/led-grillz.html [L]
+RewriteRule ^bamboo/?$ html/other/bamboo.html [L]
 # php -- BEGIN cPanel-generated handler, do not edit
 # This domain inherits the “PHP” package.
 # php -- END cPanel-generated handler, do not edit

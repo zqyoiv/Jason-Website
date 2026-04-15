@@ -201,42 +201,49 @@ def build_project_html(title: str, description: str) -> str:
     )
 
 
-_WRAP_HTML_FORMAT = None
-_WRAP_HTML_TRIED = False
+# Cached only after a successful import (never cache "load failed" — that blocked retries).
+_FORMAT_HTML = None
+_FORMAT_HTML_LOAD_LOGGED = False
 
 
 def format_project_html_file(path: str) -> None:
     """
     Reformat written project HTML to 2-space indent and ~80 char lines using
-    tools/wrap_html_to_width.py. No-op if BeautifulSoup is missing or load fails.
+    tools/wrap_html_to_width.py. Retries loading on each add until import works
+    (e.g. after pip install beautifulsoup4). Logs once to stderr if import fails.
     """
-    global _WRAP_HTML_FORMAT, _WRAP_HTML_TRIED
-    if _WRAP_HTML_TRIED and _WRAP_HTML_FORMAT is None:
-        return
-    if not _WRAP_HTML_TRIED:
-        _WRAP_HTML_TRIED = True
-        script = os.path.join(ROOT, "tools", "wrap_html_to_width.py")
-        if os.path.isfile(script):
-            try:
-                spec = importlib.util.spec_from_file_location("_wrap_html_to_width", script)
-                mod = importlib.util.module_from_spec(spec)
-                assert spec.loader
-                spec.loader.exec_module(mod)
-                _WRAP_HTML_FORMAT = mod.format_html
-            except Exception:
-                _WRAP_HTML_FORMAT = None
-        else:
-            _WRAP_HTML_FORMAT = None
-    if _WRAP_HTML_FORMAT is None:
-        return
+    global _FORMAT_HTML, _FORMAT_HTML_LOAD_LOGGED
+    if _FORMAT_HTML is None:
+        script = os.path.normpath(os.path.join(ROOT, "tools", "wrap_html_to_width.py"))
+        if not os.path.isfile(script):
+            return
+        try:
+            spec = importlib.util.spec_from_file_location(
+                "add_project_wrap_html",
+                script,
+            )
+            mod = importlib.util.module_from_spec(spec)
+            assert spec.loader
+            spec.loader.exec_module(mod)
+            _FORMAT_HTML = mod.format_html
+        except Exception as e:
+            if not _FORMAT_HTML_LOAD_LOGGED:
+                _FORMAT_HTML_LOAD_LOGGED = True
+                print(
+                    "add_project: could not load HTML formatter (%s). "
+                    "pip install -r requirements-add-project.txt (needs beautifulsoup4)."
+                    % e,
+                    file=sys.stderr,
+                )
+            return
     try:
         with open(path, encoding="utf-8") as f:
             raw = f.read()
-        out = _WRAP_HTML_FORMAT(raw, 80)
+        out = _FORMAT_HTML(raw, 80)
         with open(path, "w", encoding="utf-8", newline="\n") as f:
             f.write(out)
-    except Exception:
-        pass
+    except Exception as e:
+        print("add_project: HTML reformat failed: %s" % e, file=sys.stderr)
 
 
 def save_image_as_webp(src_path: str, dst_path: str) -> None:
