@@ -1,0 +1,3 @@
+# Local helper only: add-project form (not required for the public site).
+flask>=3.0,<4
+pillow>=10.0,<12

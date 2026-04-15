@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add project – Helper</title>
+    <link rel="icon" href="/images/favicon/jupiter_gif_still.png" type="image/png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .helper-wrap { max-width: 640px; margin: 0 auto; padding: 24px 20px 80px; }
+        .helper-wrap h1 { font-size: 22px; font-weight: 400; margin-bottom: 8px; }
+        .helper-note { font-size: 14px; color: #444; line-height: 1.5; margin-bottom: 28px; }
+        .helper-field { margin-bottom: 18px; }
+        .helper-field label { display: block; font-size: 13px; margin-bottom: 6px; }
+        .helper-field input[type="text"],
+        .helper-field select,
+        .helper-field textarea { width: 100%; box-sizing: border-box; padding: 10px 12px; font-size: 15px; border: 1px solid #ccc; font-family: inherit; }
+        .helper-field textarea { min-height: 120px; resize: vertical; }
+        .helper-field .hint { font-size: 12px; color: #666; margin-top: 4px; }
+        .helper-actions { margin-top: 24px; }
+        .helper-actions button { padding: 10px 20px; font-size: 15px; cursor: pointer; border: 1px solid #000; background: #000; color: #fff; }
+        .helper-actions button:disabled { opacity: 0.5; cursor: not-allowed; }
+        #helper-result { margin-top: 20px; font-size: 14px; white-space: pre-wrap; }
+        #helper-result.ok { color: #0a5; }
+        #helper-result.err { color: #a00; }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <script src="/js/include-header.js"></script>
+
+    <main class="helper-wrap">
+        <h1>Add project (local helper)</h1>
+        <p class="helper-note">
+            <strong>Python only</strong> (Flask + Pillow for WebP). From the project root run:
+            <code style="background:#f0f0f0;padding:2px 6px;">pip install -r requirements-add-project.txt</code>
+            then
+            <code style="background:#f0f0f0;padding:2px 6px;">python add_project_server.py</code>
+            and open <strong>http://127.0.0.1:5050/add-project</strong>.
+            This edits files on your machine; upload to FTP / Apache for production. Preview short URLs with <code style="background:#f0f0f0;padding:2px 6px;">python server.py</code>.
+        </p>
+
+        <form id="helper-form">
+            <div class="helper-field">
+                <label for="title">Project title</label>
+                <input type="text" id="title" name="title" required placeholder="e.g. Royal Centre">
+            </div>
+            <div class="helper-field">
+                <label for="section">Section (main page grid)</label>
+                <select id="section" name="section" required>
+                    <option value="general">General (Selected works)</option>
+                    <option value="commission">Commissioned designs</option>
+                    <option value="residential">Residential special projects</option>
+                </select>
+            </div>
+            <div class="helper-field">
+                <label for="pretty_url">Pretty URL slug</label>
+                <input type="text" id="pretty_url" name="pretty_url" required placeholder="e.g. royalCentre or my-project" pattern="[A-Za-z][A-Za-z0-9-]*" autocomplete="off">
+                <p class="hint">One path segment (no slashes). Site link becomes <code>/yourSlug/</code>.</p>
+            </div>
+            <div class="helper-field">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" placeholder="Plain text for the new project page; line breaks become line breaks on the page."></textarea>
+            </div>
+            <div class="helper-field">
+                <label for="thumbnail">Thumbnail image</label>
+                <input type="file" id="thumbnail" name="thumbnail" accept="image/jpeg,image/png,image/webp,image/gif,.jpg,.jpeg,.png,.webp" required>
+                <p class="hint">Converted to WebP in the same folder as your other section thumbnails.</p>
+            </div>
+            <div class="helper-actions">
+                <button type="submit" id="helper-submit">Submit – add project</button>
+            </div>
+        </form>
+        <div id="helper-result" role="status" aria-live="polite"></div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="/js/include-footer.js"></script>
+
+    <script>
+(function () {
+  var form = document.getElementById('helper-form');
+  var btn = document.getElementById('helper-submit');
+  var out = document.getElementById('helper-result');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    out.textContent = '';
+    out.className = '';
+    btn.disabled = true;
+    var fd = new FormData(form);
+    fetch('/api/add-project', { method: 'POST', body: fd })
+      .then(function (res) { return res.json().then(function (data) { return { res: res, data: data }; }); })
+      .then(function (_ref) {
+        var res = _ref.res;
+        var data = _ref.data;
+        if (data.ok) {
+          out.className = 'ok';
+          out.textContent = 'Done.\n\nHTML: ' + data.html + '\nThumbnail: ' + data.thumbnail + '\nPretty URL: ' + data.link + '\n\nPreview with python server.py then visit ' + data.link;
+          if (data.url_mapping) out.textContent += '\n\nurl-mapping.json updated: ' + data.url_mapping;
+        } else {
+          out.className = 'err';
+          out.textContent = data.error || (res.status + ' ' + res.statusText);
+        }
+      })
+      .catch(function (err) {
+        out.className = 'err';
+        out.textContent = 'Request failed: ' + (err && err.message ? err.message : String(err)) + '\n\nRun python add_project_server.py on port 5050 and use this page from that server.';
+      })
+      .then(function () { btn.disabled = false; });
+  });
+})();
+    </script>
+</body>
+</html>
