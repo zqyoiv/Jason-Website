@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Add-project helper: form at /add-project; POST /api/add-project updates the repo
-(HTML, WebP thumbnail, js/index.js, .htaccess, optional url-mapping.json).
+(HTML, WebP thumbnail + js/index.js for gallery sections, or HTML under html/other
+with .htaccess only, optional url-mapping.json).
 
 Python only — uses Pillow for WebP (no Node / no sharp).
 
@@ -57,7 +58,15 @@ SECTIONS = {
         "webp_dir": os.path.join("images", "thumbnail", "webp", "residential"),
         "html_dir": os.path.join("html", "project", "residential"),
     },
+    # Standalone HTML under html/other: no main-page grid, no thumbnail.
+    "html_other": {
+        "html_dir": os.path.join("html", "other"),
+    },
 }
+
+
+def section_is_gallery(section: str) -> bool:
+    return section in SECTIONS and "array" in SECTIONS[section]
 
 FORBIDDEN_PRETTY = frozenset(
     {
@@ -225,7 +234,12 @@ def api_add_project():
     if not title:
         return jsonify({"ok": False, "error": "Title is required."}), 400
     if section not in SECTIONS:
-        return jsonify({"ok": False, "error": "Section must be general, commission, or residential."}), 400
+        return jsonify(
+            {
+                "ok": False,
+                "error": "Section must be general, commission, residential, or html_other.",
+            }
+        ), 400
     if not pretty or not PRETTY_RE.match(pretty):
         return jsonify(
             {
@@ -235,8 +249,12 @@ def api_add_project():
         ), 400
     if pretty.lower() in FORBIDDEN_PRETTY:
         return jsonify({"ok": False, "error": "That pretty URL is reserved. Choose another."}), 400
-    if not up or not up.filename:
+
+    gallery = section_is_gallery(section)
+    if gallery and (not up or not up.filename):
         return jsonify({"ok": False, "error": "Thumbnail image is required."}), 400
+    if not gallery and up and up.filename:
+        return jsonify({"ok": False, "error": "Thumbnail is not used for HTML / other; leave the file field empty."}), 400
 
     cfg = SECTIONS[section]
     html_name = pretty_to_kebab_html_name(pretty)
@@ -245,11 +263,13 @@ def api_add_project():
     html_abs = os.path.join(ROOT, html_rel)
     thumb_base = pretty + "Thumb"
     webp_name = thumb_base + ".webp"
-    webp_abs = os.path.join(ROOT, cfg["webp_dir"], webp_name)
+    webp_abs = (
+        os.path.join(ROOT, cfg["webp_dir"], webp_name) if gallery else None
+    )
 
     if os.path.exists(html_abs):
         return jsonify({"ok": False, "error": "Project HTML already exists: " + html_rel_posix}), 400
-    if os.path.exists(webp_abs):
+    if gallery and os.path.exists(webp_abs):
         return jsonify({"ok": False, "error": "Thumbnail already exists: " + webp_name}), 400
 
     with open(HTACCESS, encoding="utf-8") as f:
@@ -257,31 +277,36 @@ def api_add_project():
     if htaccess_rule_exists(ht, pretty):
         return jsonify({"ok": False, "error": "Pretty URL already mapped in .htaccess."}), 400
 
-    with open(INDEX_JS, encoding="utf-8") as f:
-        index_js = f.read()
-    if ("link: '/%s/'" % pretty) in index_js:
-        return jsonify({"ok": False, "error": "That link already appears in index.js."}), 400
+    index_js = None
+    if gallery:
+        with open(INDEX_JS, encoding="utf-8") as f:
+            index_js = f.read()
+        if ("link: '/%s/'" % pretty) in index_js:
+            return jsonify({"ok": False, "error": "That link already appears in index.js."}), 400
 
-    ext = os.path.splitext(up.filename)[1].lower() or ".jpg"
-    if ext not in (".jpg", ".jpeg", ".png", ".webp", ".gif", ".tif", ".tiff", ".bmp"):
-        return jsonify({"ok": False, "error": "Unsupported image type: " + ext}), 400
+    if gallery:
+        ext = os.path.splitext(up.filename)[1].lower() or ".jpg"
+        if ext not in (".jpg", ".jpeg", ".png", ".webp", ".gif", ".tif", ".tiff", ".bmp"):
+            return jsonify({"ok": False, "error": "Unsupported image type: " + ext}), 400
 
-    os.makedirs(os.path.dirname(webp_abs), exist_ok=True)
-    os.makedirs(os.path.dirname(html_abs), exist_ok=True)
+        os.makedirs(os.path.dirname(webp_abs), exist_ok=True)
+        os.makedirs(os.path.dirname(html_abs), exist_ok=True)
 
-    tmp_fd, tmp_path = tempfile.mkstemp(suffix=ext)
-    os.close(tmp_fd)
-    try:
-        up.save(tmp_path)
+        tmp_fd, tmp_path = tempfile.mkstemp(suffix=ext)
+        os.close(tmp_fd)
         try:
-            save_image_as_webp(tmp_path, webp_abs)
-        except (UnidentifiedImageError, OSError, ValueError) as e:
-            return jsonify({"ok": False, "error": "Thumbnail conversion failed: " + str(e)}), 400
-    finally:
-        try:
-            os.remove(tmp_path)
-        except OSError:
-            pass
+            up.save(tmp_path)
+            try:
+                save_image_as_webp(tmp_path, webp_abs)
+            except (UnidentifiedImageError, OSError, ValueError) as e:
+                return jsonify({"ok": False, "error": "Thumbnail conversion failed: " + str(e)}), 400
+        finally:
+            try:
+                os.remove(tmp_path)
+            except OSError:
+                pass
+    else:
+        os.makedirs(os.path.dirname(html_abs), exist_ok=True)
 
     old_index = index_js
     old_ht = ht
@@ -290,11 +315,12 @@ def api_add_project():
         with open(html_abs, "w", encoding="utf-8", newline="\n") as f:
             f.write(build_project_html(title, description))
 
-        new_index = insert_index_gallery_line(
-            index_js, cfg["array"], cfg["img_js"], thumb_base, title, pretty
-        )
-        with open(INDEX_JS, "w", encoding="utf-8", newline="\n") as f:
-            f.write(new_index)
+        if gallery:
+            new_index = insert_index_gallery_line(
+                index_js, cfg["array"], cfg["img_js"], thumb_base, title, pretty
+            )
+            with open(INDEX_JS, "w", encoding="utf-8", newline="\n") as f:
+                f.write(new_index)
 
         new_ht = insert_htaccess_rule(ht, pretty, html_rel_posix)
         with open(HTACCESS, "w", encoding="utf-8", newline="\n") as f:
@@ -302,17 +328,20 @@ def api_add_project():
 
         extra = update_url_mapping(pretty, html_rel_posix)
     except Exception as e:
-        try:
-            with open(INDEX_JS, "w", encoding="utf-8", newline="\n") as f:
-                f.write(old_index)
-        except OSError:
-            pass
+        if gallery and old_index is not None:
+            try:
+                with open(INDEX_JS, "w", encoding="utf-8", newline="\n") as f:
+                    f.write(old_index)
+            except OSError:
+                pass
         try:
             with open(HTACCESS, "w", encoding="utf-8", newline="\n") as f:
                 f.write(old_ht)
         except OSError:
             pass
         for p in (html_abs, webp_abs):
+            if p is None:
+                continue
             try:
                 if os.path.isfile(p):
                     os.remove(p)
@@ -323,9 +352,10 @@ def api_add_project():
     out = {
         "ok": True,
         "html": html_rel_posix,
-        "thumbnail": os.path.relpath(webp_abs, ROOT).replace(os.sep, "/"),
         "link": "/" + pretty + "/",
     }
+    if gallery:
+        out["thumbnail"] = os.path.relpath(webp_abs, ROOT).replace(os.sep, "/")
     if extra:
         out["url_mapping"] = extra.replace(os.sep, "/")
     return jsonify(out)

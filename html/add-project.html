@@ -51,7 +51,11 @@
                     <option value="general">General (Selected works)</option>
                     <option value="commission">Commissioned designs</option>
                     <option value="residential">Residential special projects</option>
+                    <option value="html_other">HTML / other (html/other — no grid, no thumbnail)</option>
                 </select>
+                <p class="hint" id="section-html-other-hint" hidden>
+                    Page is saved under <code>html/other/</code>. Only the pretty URL and <code>.htaccess</code> are added — not the main works grid.
+                </p>
             </div>
             <div class="helper-field">
                 <label for="pretty_url">Pretty URL slug</label>
@@ -62,10 +66,10 @@
                 <label for="description">Description</label>
                 <textarea id="description" name="description" placeholder="Plain text for the new project page; line breaks become line breaks on the page."></textarea>
             </div>
-            <div class="helper-field">
+            <div class="helper-field" id="thumbnail-field">
                 <label for="thumbnail">Thumbnail image</label>
                 <input type="file" id="thumbnail" name="thumbnail" accept="image/jpeg,image/png,image/webp,image/gif,.jpg,.jpeg,.png,.webp" required>
-                <p class="hint">Converted to WebP in the same folder as your other section thumbnails.</p>
+                <p class="hint" id="thumbnail-hint">Converted to WebP in the same folder as your other section thumbnails.</p>
             </div>
             <div class="helper-actions">
                 <button type="submit" id="helper-submit">Submit – add project</button>
@@ -82,6 +86,29 @@
   var form = document.getElementById('helper-form');
   var btn = document.getElementById('helper-submit');
   var out = document.getElementById('helper-result');
+  var section = document.getElementById('section');
+  var thumb = document.getElementById('thumbnail');
+  var thumbField = document.getElementById('thumbnail-field');
+  var thumbHint = document.getElementById('thumbnail-hint');
+  var htmlOtherHint = document.getElementById('section-html-other-hint');
+
+  function syncSectionUi() {
+    var isOther = section.value === 'html_other';
+    htmlOtherHint.hidden = !isOther;
+    if (isOther) {
+      thumb.removeAttribute('required');
+      thumb.value = '';
+      thumbField.style.opacity = '0.45';
+      thumbHint.textContent = 'Not used for HTML / other.';
+    } else {
+      thumb.setAttribute('required', 'required');
+      thumbField.style.opacity = '';
+      thumbHint.textContent = 'Converted to WebP in the same folder as your other section thumbnails.';
+    }
+  }
+  section.addEventListener('change', syncSectionUi);
+  syncSectionUi();
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     out.textContent = '';
@@ -95,7 +122,10 @@
         var data = _ref.data;
         if (data.ok) {
           out.className = 'ok';
-          out.textContent = 'Done.\n\nHTML: ' + data.html + '\nThumbnail: ' + data.thumbnail + '\nPretty URL: ' + data.link + '\n\nPreview with python server.py then visit ' + data.link;
+          var lines = ['Done.', '', 'HTML: ' + data.html];
+          if (data.thumbnail) lines.push('Thumbnail: ' + data.thumbnail);
+          lines.push('Pretty URL: ' + data.link, '', 'Preview with python server.py then visit ' + data.link);
+          out.textContent = lines.join('\n');
           if (data.url_mapping) out.textContent += '\n\nurl-mapping.json updated: ' + data.url_mapping;
         } else {
           out.className = 'err';
