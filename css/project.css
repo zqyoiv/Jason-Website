@@ -209,6 +209,53 @@ iframe.vimeo-iframe {
     grid-column: 1 / -1;
 }
 
+/* 5-column thumbnail grid with optional caption rows (Organic Electric, etc.) */
+.project-organic-electric-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 40px;
+    width: 100%;
+    align-items: start;
+}
+
+.project-organic-electric-grid > a {
+    display: block;
+    line-height: 0;
+    text-decoration: none;
+}
+
+.project-organic-electric-grid > a:focus-visible {
+    outline: 2px solid #333;
+    outline-offset: 2px;
+}
+
+.project-organic-electric-grid > a img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+}
+
+.organic-grid-caption {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0 0 6px 0;
+}
+
+@media (max-width: 768px) {
+    .project-organic-electric-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-organic-electric-grid > .organic-grid-caption {
+        grid-column: 1 / -1 !important;
+    }
+}
+
 .image-footnote {
     font-size: 13px;
     color: #666;
