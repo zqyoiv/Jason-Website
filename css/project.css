@@ -209,28 +209,38 @@ iframe.vimeo-iframe {
     grid-column: 1 / -1;
 }
 
-/* 5-column thumbnail grid with optional caption rows (Organic Electric, etc.) */
+/* 5-column thumbnail grid; captions sit under their thumbnail (.organic-grid-item) */
+/* #project-body > ... has higher specificity; bare class matches if a wrapper is added later.
+   minmax(0,1fr) avoids implicit 1-column fallback when track min-sizes overflow. */
+#project-body > .project-organic-electric-grid,
 .project-organic-electric-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 10px;
     margin-bottom: 40px;
     width: 100%;
+    min-width: 0;
     align-items: start;
 }
 
-.project-organic-electric-grid > a {
+.organic-grid-item {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.organic-grid-item > a {
     display: block;
     line-height: 0;
     text-decoration: none;
 }
 
-.project-organic-electric-grid > a:focus-visible {
+.organic-grid-item > a:focus-visible {
     outline: 2px solid #333;
     outline-offset: 2px;
 }
 
-.project-organic-electric-grid > a img {
+.organic-grid-item > a img {
     width: 100%;
     height: auto;
     aspect-ratio: 1;
@@ -238,22 +248,12 @@ iframe.vimeo-iframe {
     display: block;
 }
 
-.organic-grid-caption {
+.organic-grid-item .organic-grid-caption {
     font-size: 13px;
     color: #666;
-    line-height: 1.4;
-    margin: 0;
-    padding: 0 0 6px 0;
-}
-
-@media (max-width: 768px) {
-    .project-organic-electric-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .project-organic-electric-grid > .organic-grid-caption {
-        grid-column: 1 / -1 !important;
-    }
+    line-height: 1.35;
+    margin: 8px 0 0 0;
+    padding: 0;
 }
 
 .image-footnote {
@@ -409,8 +409,15 @@ iframe.vimeo-iframe {
 
 /* Press: 3 columns – Date | Publication | Content */
 .about-table-press td:first-child {
-    width: 140px;
+    width: 200px;
+    min-width: 12.5em;
     padding-right: 32px;
+}
+
+@media (min-width: 769px) {
+    .about-table-press td:first-child {
+        white-space: nowrap;
+    }
 }
 
 .about-table-press td:nth-child(2) {
@@ -466,6 +473,11 @@ iframe.vimeo-iframe {
 
     .project-five-col-image img:not(:first-of-type) {
         display: none;
+    }
+
+    #project-body > .project-organic-electric-grid,
+    .project-organic-electric-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .project-description {
