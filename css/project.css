@@ -339,7 +339,7 @@ iframe.vimeo-iframe {
 /* About page */
 .about-content {
     grid-template-columns: 1fr;
-    max-width: 720px;
+    max-width: 780px;
 }
 
 .about-links {
@@ -422,7 +422,7 @@ iframe.vimeo-iframe {
 }
 
 .about-table-press td:nth-child(2) {
-    width: 200px;
+    width: 260px;
     padding-right: 56px;
 }
 
@@ -432,7 +432,7 @@ iframe.vimeo-iframe {
 
 /* Exhibitions & Commissions: 2 columns */
 .about-table-two-col td:first-child {
-    width: 320px;
+    width: 340px;
     padding-right: 56px;
 }
 
