@@ -39,7 +39,6 @@ body {
 
 /* Header styles */
 .header {
-    position: sticky;
     top: 0;
     z-index: 100;
     background: #fff;
@@ -344,7 +343,6 @@ body {
 /* Mobile responsive - single column */
 @media (max-width: 768px) {
     #header-placeholder {
-        position: sticky;
         top: 0;
         z-index: 100;
         background: #fff;
