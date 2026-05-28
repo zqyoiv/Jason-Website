@@ -11,8 +11,8 @@ RewriteRule ^about/?$ html/about.html [L]
 RewriteRule ^inquiry/?$ html/inquiry.html [L]
 RewriteRule ^project/?$ html/project.html [L]
 
-# Legacy research URLs (e.g. external pages embedding /research/animations/*.mp4)
-RewriteRule ^research/animations/(.+)$ animations/$1 [L]
+# Legacy research URLs → site-root research/ (animations, images, etc.)
+RewriteRule ^research/(.*)$ research/$1 [L]
 
 # Project pretty URLs (from url-mapping.json)
 RewriteRule ^jeju/?$ html/project/commission/jeju-island-light-sculpture-park.html [L]
