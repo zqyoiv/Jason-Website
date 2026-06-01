@@ -11,13 +11,13 @@ const IMG_RESIDENTIAL = '/images/thumbnail/webp/residential/';
 // General gallery (main works grid) – selected works
 // title = project page h1.project-title for hover overlay
 const generalImages = [
+  { src: IMG_SELECTED + 'meshThumb.webp', alt: 'Mesh Installation', link: '/meshes/', title: 'MESHES' },
+  { src: IMG_SELECTED + 'jupiterSpace2Thumb.webp', alt: 'Jupiter Space', link: '/jupiterSpace/', title: 'JUPITER SPACE' },
+  { src: IMG_SELECTED + 'murmuration2Thumb.webp', alt: 'Murmuration Installation', link: '/murmuration/', title: 'MURMURATION' },
   { src: IMG_SELECTED + 'royalCentreThumb.webp', alt: 'Royal Centre Installation', link: '/royalCentre/', title: 'ROYAL CENTRE' },
   { src: IMG_SELECTED + 'jupiterBevThumb.webp', alt: 'Jupiter Bev Installation', link: '/jupiterSurfaceBeverlyHills/', title: "JUPITER'S SURFACE" },
-  { src: IMG_SELECTED + 'murmuration2Thumb.webp', alt: 'Murmuration Installation', link: '/murmuration/', title: 'MURMURATION' },
-  { src: IMG_SELECTED + 'jupiterSpace2Thumb.webp', alt: 'Jupiter Space', link: '/jupiterSpace/', title: 'JUPITER SPACE' },
   { src: IMG_SELECTED + 'capellaThumb3.webp', alt: 'Capella', link: '/capellaBasket/', title: 'CAPELLA BASKET' },
   { src: IMG_SELECTED + 'capHelixThumb4.webp', alt: 'Cap Helix Installation', link: '/capillaryHelix/', title: 'CAPILLARY HELIX' },
-  { src: IMG_SELECTED + 'meshThumb.webp', alt: 'Mesh Installation', link: '/meshes/', title: 'MESHES' },
   { src: IMG_SELECTED + 'strawThumb.webp', alt: 'Straw Installation', link: '/straws/', title: 'STRAWS Sculpture System' },
   { src: IMG_SELECTED + 'trelliThumb3.webp', alt: 'Trelli Installation', link: '/trelli/', title: 'TRELLI LED LUMINAIRE' },
   { src: IMG_SELECTED + 'basketThumb1.webp', alt: 'Basket Installation', link: '/basket/', title: 'BASKET' },
