@@ -355,6 +355,137 @@ iframe.vimeo-iframe {
     opacity: 0.8;
 }
 
+/* Inquiry page */
+.inquiry-page .about-content {
+    max-width: 720px;
+}
+
+.inquiry-intro {
+    margin-bottom: 0;
+    max-width: 52ch;
+}
+
+.inquiry-form {
+    margin-top: 36px;
+    padding-top: 32px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.inquiry-field {
+    margin-bottom: 24px;
+}
+
+.inquiry-field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.inquiry-required {
+    font-weight: 400;
+    color: #666;
+}
+
+.inquiry-field input,
+.inquiry-field textarea {
+    width: 100%;
+    display: block;
+    padding: 12px 14px;
+    font-size: 15px;
+    font-family: inherit;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+    border: 1px solid #d4d4d4;
+    border-radius: 0;
+    transition: border-color 0.2s ease;
+}
+
+.inquiry-field textarea {
+    resize: vertical;
+    min-height: 160px;
+}
+
+.inquiry-field input::placeholder,
+.inquiry-field textarea::placeholder {
+    color: #999;
+}
+
+.inquiry-field input:focus,
+.inquiry-field textarea:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.inquiry-field input:required:valid,
+.inquiry-field textarea:required:valid {
+    border-color: #bdbdbd;
+}
+
+.inquiry-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.inquiry-row .inquiry-field {
+    margin-bottom: 0;
+}
+
+.inquiry-row + .inquiry-field,
+.inquiry-field + .inquiry-row {
+    margin-top: 0;
+}
+
+.inquiry-actions {
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+.inquiry-actions button {
+    min-width: 160px;
+    padding: 13px 32px;
+    font-size: 15px;
+    font-family: inherit;
+    cursor: pointer;
+    border: 1px solid #000;
+    background: #000;
+    color: #fff;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.inquiry-actions button:hover {
+    background: #333;
+    border-color: #333;
+}
+
+.inquiry-thank-you {
+    padding-top: 12px;
+}
+
+.inquiry-thank-you-title {
+    font-family: 'Futura Cyrillic Demi', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.inquiry-thank-you p {
+    margin-bottom: 20px;
+    max-width: 42ch;
+}
+
+.inquiry-thank-you-back {
+    margin-top: 32px;
+}
+
 .about-section {
     margin-bottom: 48px;
     color: #000;
@@ -498,5 +629,14 @@ iframe.vimeo-iframe {
 
     .about-section-title {
         font-size: 14px;
+    }
+
+    .inquiry-row {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .inquiry-actions button {
+        width: 100%;
     }
 }

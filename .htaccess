@@ -9,6 +9,7 @@ RewriteRule ^$ html/index.html [L]
 RewriteRule ^works/?$ html/index.html [L]
 RewriteRule ^about/?$ html/about.html [L]
 RewriteRule ^inquiry/?$ html/inquiry.html [L]
+RewriteRule ^thank-you-submission/?$ html/thank-you-submission.html [L]
 RewriteRule ^project/?$ html/project.html [L]
 
 # Legacy research URLs → site-root research/ (animations, images, etc.)

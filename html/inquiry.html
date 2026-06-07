@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="/js/tracking-config.js">
+    </script>
+    <script src="/js/tracking.js">
+    </script>
     <link href="/images/favicon/jupiter_gif_still.png"
       rel="icon"
       type="image/png" />
@@ -17,23 +21,119 @@
     </div>
     <script src="/js/include-header.js">
     </script>
-    <main class="project-page">
+    <main class="project-page inquiry-page">
       <div class="project-content about-content">
         <div class="project-description">
-          <p>
-            We are actively taking new commissions. <br>
-            Please get in touch via
+          <p class="inquiry-intro">
+            We are actively taking new commissions. Please complete the form
+            below or reach us at
             <a class="about-link email-copy"
               href="mailto:jasonkrugman@gmail.com">
               jasonkrugman@gmail.com
             </a>
+            .
           </p>
+          <form action="https://formsubmit.co/ajax/jasonkrugman@gmail.com"
+            class="inquiry-form"
+            id="inquiry-form"
+            method="POST">
+            <input name="_subject"
+              type="hidden"
+              value="New inquiry from Jason Krugman Studio" />
+            <input name="_captcha" type="hidden" value="false" />
+            <input name="_template" type="hidden" value="table" />
+            <div class="inquiry-field">
+              <label for="inquiry-name">
+                Name
+                <span aria-hidden="true" class="inquiry-required">
+                  *
+                </span>
+              </label>
+              <input autocomplete="name"
+                id="inquiry-name"
+                name="name"
+                required=""
+                type="text" />
+            </div>
+            <div class="inquiry-row">
+              <div class="inquiry-field">
+                <label for="inquiry-email">
+                  Email
+                  <span aria-hidden="true" class="inquiry-required">
+                    *
+                  </span>
+                </label>
+                <input autocomplete="email"
+                  id="inquiry-email"
+                  name="email"
+                  required=""
+                  type="email" />
+              </div>
+              <div class="inquiry-field">
+                <label for="inquiry-phone">
+                  Phone Number
+                  <span aria-hidden="true" class="inquiry-required">
+                    *
+                  </span>
+                </label>
+                <input autocomplete="tel"
+                  id="inquiry-phone"
+                  name="phone"
+                  required=""
+                  type="tel" />
+              </div>
+            </div>
+            <div class="inquiry-row">
+              <div class="inquiry-field">
+                <label for="inquiry-business-name">
+                  Business Name
+                </label>
+                <input autocomplete="organization"
+                  id="inquiry-business-name"
+                  name="business_name"
+                  type="text" />
+              </div>
+              <div class="inquiry-field">
+                <label for="inquiry-business-website">
+                  Business Website
+                </label>
+                <input id="inquiry-business-website"
+                  name="business_website"
+                  placeholder="https://"
+                  type="url" />
+              </div>
+            </div>
+            <div class="inquiry-field">
+              <label for="inquiry-business-address">
+                Business Address
+              </label>
+              <input autocomplete="street-address"
+                id="inquiry-business-address"
+                name="business_address"
+                type="text" />
+            </div>
+            <div class="inquiry-field">
+              <label for="inquiry-message">
+                Message
+              </label>
+              <textarea id="inquiry-message"
+                name="message"
+                rows="6"></textarea>
+            </div>
+            <div class="inquiry-actions">
+              <button type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </main>
     <div id="footer-placeholder">
     </div>
     <script src="/js/include-footer.js">
+    </script>
+    <script src="/js/inquiry-form.js">
     </script>
   </body>
 </html>
