@@ -94,37 +94,53 @@
               <div class="inquiry-field">
                 <label for="inquiry-business-name">
                   Business Name
+                  <span aria-hidden="true" class="inquiry-required">
+                    *
+                  </span>
                 </label>
                 <input autocomplete="organization"
                   id="inquiry-business-name"
                   name="business_name"
+                  required=""
                   type="text" />
               </div>
               <div class="inquiry-field">
                 <label for="inquiry-business-website">
                   Business Website
+                  <span aria-hidden="true" class="inquiry-required">
+                    *
+                  </span>
                 </label>
                 <input id="inquiry-business-website"
                   name="business_website"
                   placeholder="https://"
+                  required=""
                   type="url" />
               </div>
             </div>
             <div class="inquiry-field">
               <label for="inquiry-business-address">
                 Business Address
+                <span aria-hidden="true" class="inquiry-required">
+                  *
+                </span>
               </label>
               <input autocomplete="street-address"
                 id="inquiry-business-address"
                 name="business_address"
+                required=""
                 type="text" />
             </div>
             <div class="inquiry-field">
               <label for="inquiry-message">
                 Message
+                <span aria-hidden="true" class="inquiry-required">
+                  *
+                </span>
               </label>
               <textarea id="inquiry-message"
                 name="message"
+                required=""
                 rows="6"></textarea>
             </div>
             <div class="inquiry-actions">
